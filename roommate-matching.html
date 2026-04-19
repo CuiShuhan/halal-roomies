@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Find roommates — Halal Roomies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800&family=Lora:ital,wght@0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="hero-page">
+      <header class="site-header site-header--transparent">
+        <div class="site-header__inner">
+          <a class="logo" href="index.html">
+            <img class="logo__mark" src="images/guide-mascot.png" width="34" height="34" alt="" />
+            Halal Roomies
+          </a>
+          <nav class="nav-main" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="apartments.html">Apartments</a>
+            <a href="roommate-matching.html" aria-current="page">Roommates</a>
+          </nav>
+          <div class="header-actions">
+            <a class="btn btn--outline" href="signup.html">Sign Up</a>
+            <a class="btn btn--primary" href="login.html">Log In</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-hero hero match-hero" aria-labelledby="match-title">
+        <div
+          class="hero__bg"
+          style="background-image: url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1600&q=80')"
+        ></div>
+        <div class="match-hero__overlay" aria-hidden="true"></div>
+        <div class="hero__inner match-hero__content" style="text-align: center; max-width: 40rem">
+          <p class="section__eyebrow" style="margin-bottom: 0.5rem">Matching</p>
+          <h1 id="match-title" class="page-title">Find or be found — your choice</h1>
+          <p class="match-hero__lead">
+            Whether you are looking for someone or want others to find you, we support both flows.
+          </p>
+          <div class="hero-cta-row" style="margin-top: 1rem">
+            <a class="btn btn--primary btn--lg" href="#find-roommate-flow">Find a roommate</a>
+            <a class="btn btn--outline btn--lg" href="post-profile.html">Post my profile</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="find-roommate-flow" class="form-shell form-shell--wide match-flow-shell">
+      <div id="matchingLayout" class="matching-layout">
+        <form id="matcherForm" class="form-card">
+        <h2 class="form-section-title">Room preferences</h2>
+        <div class="form-grid form-grid--2">
+          <label class="field">
+            Min budget ($)
+            <input type="number" name="budget_min" value="1550" min="0" step="50" />
+          </label>
+          <label class="field">
+            Max budget ($)
+            <input type="number" name="budget_max" value="2000" min="0" step="50" />
+          </label>
+        </div>
+        <label class="field" style="margin-top: 1rem">
+          Preferred location
+          <input type="text" name="location" placeholder="City, neighborhood, country" autocomplete="address-level2" />
+        </label>
+        <div class="form-grid form-grid--3" style="margin-top: 1rem">
+          <label class="field">
+            Bedrooms
+            <select name="beds">
+              <option>Any</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3+</option>
+            </select>
+          </label>
+          <label class="field">
+            Bathrooms
+            <select name="baths">
+              <option>Any</option>
+              <option>1</option>
+              <option>2</option>
+            </select>
+          </label>
+          <label class="field">
+            Lease term
+            <select name="lease">
+              <option>6–12 months</option>
+              <option>Month-to-month</option>
+              <option>12+ months</option>
+            </select>
+          </label>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0" />
+
+        <h2 class="form-section-title">Lifestyle preferences</h2>
+        <div class="grid-2" style="gap: 1.25rem">
+          <div>
+            <p style="margin: 0 0 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--text-muted)">Cleanliness</p>
+            <div class="segmented" role="radiogroup" aria-label="Cleanliness">
+              <label><input type="radio" name="clean" value="relaxed" /><span>Relaxed</span></label>
+              <label><input type="radio" name="clean" value="balanced" checked /><span>Balanced</span></label>
+              <label><input type="radio" name="clean" value="strict" /><span>Very tidy</span></label>
+            </div>
+          </div>
+          <div>
+            <p style="margin: 0 0 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--text-muted)">Sleep schedule</p>
+            <div class="segmented" role="radiogroup" aria-label="Sleep schedule">
+              <label><input type="radio" name="sleep" value="early" checked /><span>Early bird</span></label>
+              <label><input type="radio" name="sleep" value="flex" /><span>Flexible</span></label>
+              <label><input type="radio" name="sleep" value="night" /><span>Night owl</span></label>
+            </div>
+          </div>
+          <div>
+            <p style="margin: 0 0 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--text-muted)">Pets</p>
+            <div class="segmented" role="radiogroup" aria-label="Pets">
+              <label><input type="radio" name="pets" value="ok" /><span>Open to pets</span></label>
+              <label><input type="radio" name="pets" value="none" checked /><span>No pets</span></label>
+            </div>
+          </div>
+          <div>
+            <p style="margin: 0 0 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--text-muted)">Guests</p>
+            <div class="segmented" role="radiogroup" aria-label="Guests">
+              <label><input type="radio" name="guests" value="rare" /><span>Rare</span></label>
+              <label><input type="radio" name="guests" value="sometimes" checked /><span>Sometimes</span></label>
+              <label><input type="radio" name="guests" value="often" /><span>Often</span></label>
+            </div>
+          </div>
+          <div>
+            <p style="margin: 0 0 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--text-muted)">Smoking</p>
+            <div class="segmented" role="radiogroup" aria-label="Smoking">
+              <label><input type="radio" name="smoke" value="no" checked /><span>Non-smoking home</span></label>
+              <label><input type="radio" name="smoke" value="out" /><span>Outside only</span></label>
+            </div>
+          </div>
+          <div>
+            <p style="margin: 0 0 0.5rem; font-weight: 700; font-size: 0.85rem; color: var(--text-muted)">Noise level</p>
+            <div class="segmented" role="radiogroup" aria-label="Noise">
+              <label><input type="radio" name="noise" value="quiet" checked /><span>Quiet</span></label>
+              <label><input type="radio" name="noise" value="moderate" /><span>Moderate</span></label>
+              <label><input type="radio" name="noise" value="lively" /><span>Lively</span></label>
+            </div>
+          </div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0" />
+
+        <h2 class="form-section-title">Match priority</h2>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="prio" value="ns" checked /><span>Non-smoker</span></label>
+          <label class="check-pill"><input type="checkbox" name="prio" value="clean" checked /><span>Clean</span></label>
+          <label class="check-pill"><input type="checkbox" name="prio" value="budget" /><span>Similar budget</span></label>
+          <label class="check-pill"><input type="checkbox" name="prio" value="male" /><span>Male roommate</span></label>
+          <label class="check-pill"><input type="checkbox" name="prio" value="lease" /><span>Flexible lease</span></label>
+          <label class="check-pill"><input type="checkbox" name="prio" value="quiet" /><span>Quiet</span></label>
+          <label class="check-pill"><input type="checkbox" name="prio" value="female" /><span>Female roommate</span></label>
+          <label class="check-pill"><input type="checkbox" name="prio" value="nopets" checked /><span>No pets</span></label>
+        </div>
+
+          <button type="submit" class="btn btn--primary btn--block btn--lg" style="margin-top: 2rem">Find my matches</button>
+        </form>
+
+        <aside id="matchResultsPanel" class="match-results-panel is-hidden" aria-live="polite">
+          <h2 class="form-section-title">8 recommended roommates</h2>
+          <div class="match-long-grid">
+            <article class="match-mini-card">
+              <div class="match-mini-card__head">
+                <div class="match-mini-card__person">
+                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=Aisha" alt="" style="width: 52px; height: 52px; margin: 0" />
+                  <div>
+                    <p class="match-mini-card__name">Aisha M.</p>
+                    <p class="card__meta">Grad Student · Boston, MA</p>
+                  </div>
+                </div>
+                <p class="match-mini-card__score">96%</p>
+              </div>
+              <div class="card__tags">
+                <span class="tag tag--neutral">No alcohol</span>
+                <span class="tag tag--neutral">Early riser</span>
+                <span class="tag tag--neutral">Halal kitchen</span>
+              </div>
+              <p class="card__meta" style="margin-top: 0.55rem">aisha.m@halalroomies.com</p>
+              <div class="match-mini-card__bar"><span style="width: 96%"></span></div>
+            </article>
+
+            <article class="match-mini-card">
+              <div class="match-mini-card__head">
+                <div class="match-mini-card__person">
+                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=OmarK" alt="" style="width: 52px; height: 52px; margin: 0" />
+                  <div>
+                    <p class="match-mini-card__name">Omar K.</p>
+                    <p class="card__meta">Software Engineer · NYC</p>
+                  </div>
+                </div>
+                <p class="match-mini-card__score">89%</p>
+              </div>
+              <div class="card__tags">
+                <span class="tag tag--neutral">Quiet hours</span>
+                <span class="tag tag--neutral">Night owl</span>
+                <span class="tag tag--neutral">Halal only</span>
+              </div>
+              <p class="card__meta" style="margin-top: 0.55rem">omar.k@halalroomies.com</p>
+              <div class="match-mini-card__bar"><span style="width: 89%"></span></div>
+            </article>
+
+            <article class="match-mini-card">
+              <div class="match-mini-card__head">
+                <div class="match-mini-card__person">
+                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=FatimaR" alt="" style="width: 52px; height: 52px; margin: 0" />
+                  <div>
+                    <p class="match-mini-card__name">Fatima R.</p>
+                    <p class="card__meta">Medical Resident · D.C.</p>
+                  </div>
+                </div>
+                <p class="match-mini-card__score">84%</p>
+              </div>
+              <div class="card__tags">
+                <span class="tag tag--neutral">Prayer-friendly</span>
+                <span class="tag tag--neutral">Sisters only</span>
+              </div>
+              <p class="card__meta" style="margin-top: 0.55rem">fatima.r@halalroomies.com</p>
+              <div class="match-mini-card__bar"><span style="width: 84%"></span></div>
+            </article>
+
+            <article class="match-mini-card">
+              <div class="match-mini-card__head">
+                <div class="match-mini-card__person">
+                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=YusufN" alt="" style="width: 52px; height: 52px; margin: 0" />
+                  <div>
+                    <p class="match-mini-card__name">Yusuf N.</p>
+                    <p class="card__meta">Analyst · Arlington, VA</p>
+                  </div>
+                </div>
+                <p class="match-mini-card__score">82%</p>
+              </div>
+              <div class="card__tags">
+                <span class="tag tag--neutral">Quiet</span>
+                <span class="tag tag--neutral">Non-smoker</span>
+                <span class="tag tag--neutral">Flexible lease</span>
+              </div>
+              <p class="card__meta" style="margin-top: 0.55rem">yusuf.n@halalroomies.com</p>
+              <div class="match-mini-card__bar"><span style="width: 82%"></span></div>
+            </article>
+
+            <article class="match-mini-card">
+              <div class="match-mini-card__head">
+                <div class="match-mini-card__person">
+                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=SaraL" alt="" style="width: 52px; height: 52px; margin: 0" />
+                  <div>
+                    <p class="match-mini-card__name">Sara L.</p>
+                    <p class="card__meta">Designer · Rockville, MD</p>
+                  </div>
+                </div>
+                <p class="match-mini-card__score">80%</p>
+              </div>
+              <div class="card__tags">
+                <span class="tag tag--neutral">Clean</span>
+                <span class="tag tag--neutral">No pets</span>
+                <span class="tag tag--neutral">Early riser</span>
+              </div>
+              <p class="card__meta" style="margin-top: 0.55rem">sara.l@halalroomies.com</p>
+              <div class="match-mini-card__bar"><span style="width: 80%"></span></div>
+            </article>
+
+            <article class="match-mini-card">
+              <div class="match-mini-card__head">
+                <div class="match-mini-card__person">
+                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=HudaP" alt="" style="width: 52px; height: 52px; margin: 0" />
+                  <div>
+                    <p class="match-mini-card__name">Huda P.</p>
+                    <p class="card__meta">Teacher · Baltimore, MD</p>
+                  </div>
+                </div>
+                <p class="match-mini-card__score">78%</p>
+              </div>
+              <div class="card__tags">
+                <span class="tag tag--neutral">Prayer-friendly</span>
+                <span class="tag tag--neutral">Guests rare</span>
+                <span class="tag tag--neutral">Budget aligned</span>
+              </div>
+              <p class="card__meta" style="margin-top: 0.55rem">huda.p@halalroomies.com</p>
+              <div class="match-mini-card__bar"><span style="width: 78%"></span></div>
+            </article>
+
+            <article class="match-mini-card">
+              <div class="match-mini-card__head">
+                <div class="match-mini-card__person">
+                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=BilalT" alt="" style="width: 52px; height: 52px; margin: 0" />
+                  <div>
+                    <p class="match-mini-card__name">Bilal T.</p>
+                    <p class="card__meta">Researcher · Silver Spring, MD</p>
+                  </div>
+                </div>
+                <p class="match-mini-card__score">75%</p>
+              </div>
+              <div class="card__tags">
+                <span class="tag tag--neutral">Night owl</span>
+                <span class="tag tag--neutral">Quiet hours</span>
+                <span class="tag tag--neutral">No alcohol</span>
+              </div>
+              <p class="card__meta" style="margin-top: 0.55rem">bilal.t@halalroomies.com</p>
+              <div class="match-mini-card__bar"><span style="width: 75%"></span></div>
+            </article>
+
+            <article class="match-mini-card">
+              <div class="match-mini-card__head">
+                <div class="match-mini-card__person">
+                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=NoorJ" alt="" style="width: 52px; height: 52px; margin: 0" />
+                  <div>
+                    <p class="match-mini-card__name">Noor J.</p>
+                    <p class="card__meta">Nurse · Alexandria, VA</p>
+                  </div>
+                </div>
+                <p class="match-mini-card__score">73%</p>
+              </div>
+              <div class="card__tags">
+                <span class="tag tag--neutral">Flexible</span>
+                <span class="tag tag--neutral">Clean</span>
+                <span class="tag tag--neutral">Pets okay</span>
+              </div>
+              <p class="card__meta" style="margin-top: 0.55rem">noor.j@halalroomies.com</p>
+              <div class="match-mini-card__bar"><span style="width: 73%"></span></div>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+        <div class="footer-bottom">
+          <div>https://halalroomies.com/</div>
+          <div>questions@halalroomies.com · +1 (123) 456-7890</div>
+          <div class="social" aria-label="Social">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="X">𝕏</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        const form = document.getElementById("matcherForm");
+        const panel = document.getElementById("matchResultsPanel");
+        const layout = document.getElementById("matchingLayout");
+        if (!form || !panel || !layout) return;
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          form.classList.add("is-hidden");
+          panel.classList.remove("is-hidden");
+          layout.classList.add("has-results");
+          panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      })();
+    </script>
+  </body>
+</html>

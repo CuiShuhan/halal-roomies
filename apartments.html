@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apartments — Halal Roomies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800&family=Lora:ital,wght@0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="logo" href="index.html">
+          <img class="logo__mark" src="images/guide-mascot.png" width="34" height="34" alt="" />
+          Halal Roomies
+        </a>
+        <nav class="nav-main" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="apartments.html" aria-current="page">Apartments</a>
+          <a href="roommate-matching.html">Roommates</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn--outline" href="signup.html">Sign Up</a>
+          <a class="btn btn--primary" href="login.html">Log In</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section section--tint" style="padding-top: 2rem">
+        <div class="search-toolbar">
+          <input type="search" placeholder="Search city, neighborhood, or keyword…" aria-label="Search listings" />
+          <button type="button" class="search-toolbar__filter" aria-label="Filters">⚙</button>
+        </div>
+        <div class="section__head section__head--bar">
+          <div>
+            <p class="section__eyebrow">Browse</p>
+            <h1 class="section__title">Available apartments and rooms</h1>
+          </div>
+          <a class="btn btn--muted" href="listing-plans.html">Post my property</a>
+        </div>
+
+        <div class="grid-apt">
+          <article class="card">
+            <div style="position: relative">
+              <img
+                class="card__media"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                alt=""
+              />
+              <button type="button" class="icon-btn" style="position: absolute; top: 0.65rem; right: 0.65rem" aria-label="Save">♡</button>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Croatian Old Villa</h2>
+              <p class="card__meta">📍 Monaco, Umag, Croatia</p>
+              <p class="card__price">$1,550 / month</p>
+              <div class="card__tags"><span class="tag">4 beds · 2 baths</span></div>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+            </div>
+          </article>
+          <article class="card">
+            <div style="position: relative">
+              <img
+                class="card__media"
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+                alt=""
+              />
+              <button type="button" class="icon-btn" style="position: absolute; top: 0.65rem; right: 0.65rem" aria-label="Save">♡</button>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Georgetown Row House</h2>
+              <p class="card__meta">📍 Washington, D.C.</p>
+              <p class="card__price">$1,200 / month</p>
+              <div class="card__tags"><span class="tag">2 beds · 1 bath</span></div>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+            </div>
+          </article>
+          <article class="card">
+            <div style="position: relative">
+              <img
+                class="card__media"
+                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+                alt=""
+              />
+              <button type="button" class="icon-btn" style="position: absolute; top: 0.65rem; right: 0.65rem" aria-label="Save">♡</button>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Arlington Garden Unit</h2>
+              <p class="card__meta">📍 Arlington, VA</p>
+              <p class="card__price">$980 / month</p>
+              <div class="card__tags"><span class="tag">Studio · 1 bath</span></div>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+            </div>
+          </article>
+          <article class="card">
+            <div style="position: relative">
+              <img
+                class="card__media"
+                src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80"
+                alt=""
+              />
+              <button type="button" class="icon-btn" style="position: absolute; top: 0.65rem; right: 0.65rem" aria-label="Save">♡</button>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Harbor View Loft</h2>
+              <p class="card__meta">📍 Baltimore, MD</p>
+              <p class="card__price">$1,350 / month</p>
+              <div class="card__tags"><span class="tag">1 bed · 1 bath</span></div>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+            </div>
+          </article>
+          <article class="card">
+            <div style="position: relative">
+              <img
+                class="card__media"
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80"
+                alt=""
+              />
+              <button type="button" class="icon-btn" style="position: absolute; top: 0.65rem; right: 0.65rem" aria-label="Save">♡</button>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Bright Corner Flat</h2>
+              <p class="card__meta">📍 Philadelphia, PA</p>
+              <p class="card__price">$1,100 / month</p>
+              <div class="card__tags"><span class="tag">2 beds · 1 bath</span></div>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+            </div>
+          </article>
+          <article class="card">
+            <div style="position: relative">
+              <img
+                class="card__media"
+                src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80"
+                alt=""
+              />
+              <button type="button" class="icon-btn" style="position: absolute; top: 0.65rem; right: 0.65rem" aria-label="Save">♡</button>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Tree-Lined Duplex</h2>
+              <p class="card__meta">📍 Fairfax, VA</p>
+              <p class="card__price">$1,450 / month</p>
+              <div class="card__tags"><span class="tag">3 beds · 2 baths</span></div>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+            </div>
+          </article>
+          <article class="card">
+            <div style="position: relative">
+              <img
+                class="card__media"
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80"
+                alt=""
+              />
+              <button type="button" class="icon-btn" style="position: absolute; top: 0.65rem; right: 0.65rem" aria-label="Save">♡</button>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Quiet Suburban Suite</h2>
+              <p class="card__meta">📍 Rockville, MD</p>
+              <p class="card__price">$1,050 / month</p>
+              <div class="card__tags"><span class="tag">1 bed · 1 bath</span></div>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+            </div>
+          </article>
+          <article class="card">
+            <div style="position: relative">
+              <img
+                class="card__media"
+                src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&q=80"
+                alt=""
+              />
+              <button type="button" class="icon-btn" style="position: absolute; top: 0.65rem; right: 0.65rem" aria-label="Save">♡</button>
+            </div>
+            <div class="card__body">
+              <h2 class="card__title">Campus Walk-Up</h2>
+              <p class="card__meta">📍 College Park, MD</p>
+              <p class="card__price">$890 / month</p>
+              <div class="card__tags"><span class="tag">2 beds · 1 bath</span></div>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="partners-strip" aria-label="Trusted partners">
+        <div class="partners-strip__inner">
+          <p class="section__eyebrow" style="margin-bottom: 0.75rem">Trusted partners</p>
+          <div class="partners-strip__logos">
+            <span>GEORGETOWN</span>
+            <span>GW</span>
+            <span>JOHNS HOPKINS</span>
+            <span>CHG</span>
+            <span>APARTMENT GUIDE</span>
+            <span>YELP</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+        <div class="footer-bottom">
+          <div>https://halalroomies.com/</div>
+          <div>questions@halalroomies.com · +1 (123) 456-7890</div>
+          <div class="social" aria-label="Social">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="X">𝕏</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

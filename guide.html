@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your journey — Halal Roomies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800&family=Lora:ital,wght@0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="guide-site">
+    <header class="site-header site-header--guide-brand">
+      <div class="site-header__inner">
+        <a class="logo" href="index.html">
+          <img class="logo__mark" src="images/guide-mascot.png" width="34" height="34" alt="" />
+          Halal Roomies
+        </a>
+        <nav class="nav-main" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="apartments.html">Apartments</a>
+          <a href="roommate-matching.html">Roommates</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn btn--outline" href="signup.html">Sign Up</a>
+          <a class="btn btn--primary" href="login.html">Log In</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="guide-page">
+      <header class="guide-hero">
+        <h1 class="guide-hero__title">Your journey on Halal Roomies</h1>
+        <img
+          class="guide-hero__mascot"
+          src="images/guide-mascot.png"
+          width="120"
+          height="120"
+          alt="Your guide mascot"
+          loading="eager"
+        />
+      </header>
+
+      <section class="guide-panel" aria-labelledby="guide-ch1">
+        <div class="guide-panel__head">
+          <figure class="guide-panel__mascot">
+            <img src="images/guide-mascot.png" width="88" height="88" alt="" />
+          </figure>
+          <div class="guide-panel__head-text">
+            <p class="section__eyebrow">Chapter 1 · appartment</p>
+            <p id="guide-ch1" class="guide-panel__intro">
+              apartment flow - u can browse available listing for free but choose a reasonable plan to post your property
+            </p>
+          </div>
+        </div>
+
+        <div class="guide-cards-row">
+          <article class="plan-card guide-cards-row__card">
+            <h2 class="plan-card__name">Pay per listing</h2>
+            <p class="plan-card__price">
+              <span class="plan-card__amount">$14.99</span> <span class="plan-card__unit">/ listing</span>
+            </p>
+            <p class="plan-card__tagline">Best if you only post occasionally.</p>
+            <ul class="plan-card__features">
+              <li>One active listing per purchase</li>
+              <li>30 days on the marketplace</li>
+              <li>Standard placement in search</li>
+            </ul>
+            <a class="btn btn--primary btn--block plan-card__cta" href="list-property.html">Pay &amp; continue (demo)</a>
+          </article>
+
+          <form class="form-card guide-cards-row__card guide-form-preview" action="list-property.html" method="get">
+            <h2 class="form-section-title">Property information</h2>
+            <label class="field">
+              Property name
+              <input type="text" name="title" placeholder="Georgetown Row House" />
+            </label>
+            <label class="field">
+              Location
+              <input type="text" name="location" placeholder="Washington, D.C." />
+            </label>
+            <div class="form-grid form-grid--2" style="margin-top: 0.75rem">
+              <label class="field">
+                Type
+                <select name="type">
+                  <option>House</option>
+                  <option>Apartment</option>
+                </select>
+              </label>
+              <label class="field">
+                Rent / mo
+                <input type="text" name="rent" placeholder="$1,200" />
+              </label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block" style="margin-top: 1rem">Continue (demo)</button>
+          </form>
+
+          <article class="card guide-cards-row__card guide-listing-card">
+            <img
+              class="card__media"
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+              alt=""
+            />
+            <div class="card__body">
+              <h3 class="card__title">Georgetown Row House</h3>
+              <p class="card__meta">📍 Washington, D.C.</p>
+              <div class="card__tags"><span class="tag">2 beds · 1 bath</span></div>
+              <p class="card__price">$1,200 / month</p>
+              <div class="card__footer">
+                <a class="btn btn--primary" href="apartment-detail.html">View detail</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="guide-panel guide-panel--roommate" aria-labelledby="guide-ch2">
+        <div class="guide-panel__head">
+          <figure class="guide-panel__mascot">
+            <img src="images/guide-mascot.png" width="88" height="88" alt="" />
+          </figure>
+          <div class="guide-panel__head-text">
+            <p class="section__eyebrow">Chapter 2 · roommate matching</p>
+            <p id="guide-ch2" class="guide-panel__intro">
+              roommate flow — whether you want to find a roommate or be found by one, we support both: use your
+              preferences to search and filter, and fill in your profile so others can discover you too.
+            </p>
+          </div>
+        </div>
+
+        <div class="guide-roommate__shell">
+          <div class="guide-roommate__toolbar" role="group" aria-label="Choose roommate flow">
+            <div class="guide-roommate__toolbar-btns">
+              <a
+                class="btn btn--primary btn--lg guide-roommate__mode guide-roommate__mode--active"
+                href="roommate-matching.html"
+                >Find a roommate</a
+              >
+              <a class="btn btn--outline btn--lg guide-roommate__mode" href="post-profile.html">Post my profile</a>
+            </div>
+          </div>
+
+          <div class="guide-roommate-grid">
+            <div class="guide-roommate__form-wrap">
+              <div class="form-card guide-lifestyle-preview">
+                <h2 class="form-section-title">Lifestyle preferences</h2>
+                <div class="grid-2 guide-lifestyle-preview__grid">
+                  <div>
+                    <p class="guide-seg-label">Cleanliness</p>
+                    <div class="segmented" role="radiogroup" aria-label="Cleanliness (preview)">
+                      <label><input type="radio" name="g_clean" value="relaxed" /><span>Relaxed</span></label>
+                      <label><input type="radio" name="g_clean" value="balanced" checked /><span>Balanced</span></label>
+                      <label><input type="radio" name="g_clean" value="strict" /><span>Very tidy</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="guide-seg-label">Sleep schedule</p>
+                    <div class="segmented" role="radiogroup" aria-label="Sleep (preview)">
+                      <label><input type="radio" name="g_sleep" value="early" checked /><span>Early bird</span></label>
+                      <label><input type="radio" name="g_sleep" value="flex" /><span>Flexible</span></label>
+                      <label><input type="radio" name="g_sleep" value="night" /><span>Night owl</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="guide-seg-label">Pets</p>
+                    <div class="segmented" role="radiogroup" aria-label="Pets (preview)">
+                      <label><input type="radio" name="g_pets" value="ok" /><span>Open to pets</span></label>
+                      <label><input type="radio" name="g_pets" value="none" checked /><span>No pets</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="guide-seg-label">Guests</p>
+                    <div class="segmented" role="radiogroup" aria-label="Guests (preview)">
+                      <label><input type="radio" name="g_guests" value="rare" /><span>Rare</span></label>
+                      <label><input type="radio" name="g_guests" value="sometimes" checked /><span>Sometimes</span></label>
+                      <label><input type="radio" name="g_guests" value="often" /><span>Often</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="guide-seg-label">Smoking</p>
+                    <div class="segmented" role="radiogroup" aria-label="Smoking (preview)">
+                      <label><input type="radio" name="g_smoke" value="no" checked /><span>Non-smoking home</span></label>
+                      <label><input type="radio" name="g_smoke" value="out" /><span>Outside only</span></label>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="guide-seg-label">Noise level</p>
+                    <div class="segmented" role="radiogroup" aria-label="Noise (preview)">
+                      <label><input type="radio" name="g_noise" value="quiet" checked /><span>Quiet</span></label>
+                      <label><input type="radio" name="g_noise" value="moderate" /><span>Moderate</span></label>
+                      <label><input type="radio" name="g_noise" value="lively" /><span>Lively</span></label>
+                    </div>
+                  </div>
+                </div>
+                <p class="guide-lifestyle-preview__note">Preview — open the real flow to search and match.</p>
+              </div>
+            </div>
+
+            <aside class="guide-roommate__side" aria-label="Sample roommate matches">
+              <h3 class="guide-roommate__side-title">Recommended roommates</h3>
+              <div class="guide-match-stack">
+                <article class="match-mini-card">
+                  <div class="match-mini-card__head">
+                    <div class="match-mini-card__person">
+                      <img
+                        class="avatar"
+                        src="https://api.dicebear.com/9.x/adventurer/svg?seed=Aisha"
+                        alt=""
+                        style="width: 52px; height: 52px; margin: 0"
+                      />
+                      <div>
+                        <p class="match-mini-card__name">Aisha M.</p>
+                        <p class="card__meta">Grad Student · Boston, MA</p>
+                      </div>
+                    </div>
+                    <p class="match-mini-card__score">96%</p>
+                  </div>
+                  <div class="card__tags">
+                    <span class="tag tag--neutral">No alcohol</span>
+                    <span class="tag tag--neutral">Early riser</span>
+                    <span class="tag tag--neutral">Halal kitchen</span>
+                  </div>
+                  <p class="card__meta" style="margin-top: 0.55rem">aisha.m@halalroomies.com</p>
+                  <div class="match-mini-card__bar" aria-hidden="true"><span style="width: 96%"></span></div>
+                </article>
+
+                <article class="match-mini-card">
+                  <div class="match-mini-card__head">
+                    <div class="match-mini-card__person">
+                      <img
+                        class="avatar"
+                        src="https://api.dicebear.com/9.x/adventurer/svg?seed=FatimaR"
+                        alt=""
+                        style="width: 52px; height: 52px; margin: 0"
+                      />
+                      <div>
+                        <p class="match-mini-card__name">Fatima R.</p>
+                        <p class="card__meta">Medical Resident · D.C.</p>
+                      </div>
+                    </div>
+                    <p class="match-mini-card__score">84%</p>
+                  </div>
+                  <div class="card__tags">
+                    <span class="tag tag--neutral">Prayer-friendly</span>
+                    <span class="tag tag--neutral">Sisters only</span>
+                  </div>
+                  <p class="card__meta" style="margin-top: 0.55rem">fatima.r@halalroomies.com</p>
+                  <div class="match-mini-card__bar" aria-hidden="true"><span style="width: 84%"></span></div>
+                </article>
+
+                <article class="match-mini-card">
+                  <div class="match-mini-card__head">
+                    <div class="match-mini-card__person">
+                      <img
+                        class="avatar"
+                        src="https://api.dicebear.com/9.x/adventurer/svg?seed=SaraL"
+                        alt=""
+                        style="width: 52px; height: 52px; margin: 0"
+                      />
+                      <div>
+                        <p class="match-mini-card__name">Sara L.</p>
+                        <p class="card__meta">Designer · Rockville, MD</p>
+                      </div>
+                    </div>
+                    <p class="match-mini-card__score">80%</p>
+                  </div>
+                  <div class="card__tags">
+                    <span class="tag tag--neutral">Clean</span>
+                    <span class="tag tag--neutral">No pets</span>
+                    <span class="tag tag--neutral">Early riser</span>
+                  </div>
+                  <p class="card__meta" style="margin-top: 0.55rem">sara.l@halalroomies.com</p>
+                  <div class="match-mini-card__bar" aria-hidden="true"><span style="width: 80%"></span></div>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+        <div class="footer-bottom">
+          <div>https://halalroomies.com/</div>
+          <div>questions@halalroomies.com · +1 (123) 456-7890</div>
+          <div class="social" aria-label="Social">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="X">𝕏</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

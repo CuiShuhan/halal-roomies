@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Listing plans — Halal Roomies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800&family=Lora:ital,wght@0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="hero-page">
+      <header class="site-header site-header--transparent">
+        <div class="site-header__inner">
+          <a class="logo" href="index.html">
+            <img class="logo__mark" src="images/guide-mascot.png" width="34" height="34" alt="" />
+            Halal Roomies
+          </a>
+          <nav class="nav-main" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="apartments.html" aria-current="page">Apartments</a>
+            <a href="roommate-matching.html">Roommates</a>
+          </nav>
+          <div class="header-actions">
+            <a class="btn btn--outline" href="signup.html">Sign Up</a>
+            <a class="btn btn--primary" href="login.html">Log In</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-hero hero" aria-labelledby="plans-title">
+        <div
+          class="hero__bg"
+          style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80')"
+        ></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__inner" style="padding-top: 5rem; padding-bottom: 3rem">
+          <p class="section__eyebrow" style="margin-bottom: 0.5rem">List your space</p>
+          <h1 id="plans-title" class="page-title">Choose your listing plan</h1>
+          <p class="page-lead">Pick an option below. This is a demo—no real payment is processed.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="section section--tint" style="padding-top: 1rem">
+      <div class="plan-grid" role="list">
+        <article class="plan-card" role="listitem">
+          <h2 class="plan-card__name">Pay per listing</h2>
+          <p class="plan-card__price"><span class="plan-card__amount">$14.99</span> <span class="plan-card__unit">/ listing</span></p>
+          <p class="plan-card__tagline">Best if you only post occasionally.</p>
+          <ul class="plan-card__features">
+            <li>One active listing per purchase</li>
+            <li>30 days on the marketplace</li>
+            <li>Standard placement in search</li>
+          </ul>
+          <a class="btn btn--primary btn--block plan-card__cta" href="list-property.html">Pay &amp; continue (demo)</a>
+        </article>
+
+        <article class="plan-card plan-card--featured" role="listitem">
+          <p class="plan-card__badge">Popular</p>
+          <h2 class="plan-card__name">Monthly unlimited</h2>
+          <p class="plan-card__price"><span class="plan-card__amount">$39</span> <span class="plan-card__unit">/ month</span></p>
+          <p class="plan-card__tagline">Post as many listings as you need.</p>
+          <ul class="plan-card__features">
+            <li>Unlimited active listings</li>
+            <li>Cancel any time</li>
+            <li>Email support</li>
+          </ul>
+          <a class="btn btn--primary btn--block plan-card__cta" href="list-property.html">Pay &amp; continue (demo)</a>
+        </article>
+
+        <article class="plan-card" role="listitem">
+          <h2 class="plan-card__name">Annual unlimited</h2>
+          <p class="plan-card__price"><span class="plan-card__amount">$299</span> <span class="plan-card__unit">/ year</span></p>
+          <p class="plan-card__tagline">Lowest effective price for frequent hosts.</p>
+          <ul class="plan-card__features">
+            <li>Unlimited listings all year</li>
+            <li>“Featured” slot once per quarter</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn btn--primary btn--block plan-card__cta" href="list-property.html">Pay &amp; continue (demo)</a>
+        </article>
+      </div>
+      <p class="plan-demo-note">Demo only: every button goes to the same “Post your own property” form.</p>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+        <div class="footer-bottom">
+          <div>https://halalroomies.com/</div>
+          <div>questions@halalroomies.com · +1 (123) 456-7890</div>
+          <div class="social" aria-label="Social">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="X">𝕏</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

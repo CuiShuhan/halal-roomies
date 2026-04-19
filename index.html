@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Halal Roomies — Find apartments &amp; roommates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800&family=Lora:ital,wght@0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="hero-page">
+      <header class="site-header site-header--transparent">
+        <div class="site-header__inner">
+          <a class="logo" href="index.html">
+            <img class="logo__mark" src="images/guide-mascot.png" width="34" height="34" alt="" />
+            Halal Roomies
+          </a>
+          <nav class="nav-main" aria-label="Primary">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="apartments.html">Apartments</a>
+            <a href="roommate-matching.html">Roommates</a>
+          </nav>
+          <div class="header-actions">
+            <a class="btn btn--outline" href="signup.html">Sign Up</a>
+            <a class="btn btn--primary" href="login.html">Log In</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div
+          class="hero__bg"
+          style="background-image: url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1920&q=85')"
+        ></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__inner hero__inner--split">
+          <div class="hero__content">
+            <p class="hero__kicker">Welcome to Halal Roomies</p>
+            <h1 id="hero-title" class="hero__title">
+              Find apartments &amp; roommates with <span class="accent">Similar Values</span>
+            </h1>
+            <p class="hero__lead">
+              Browse listings and meet like-minded people in a safe community that shares your values.
+            </p>
+            <div class="hero-cta-row">
+              <button type="button" class="btn btn--primary btn--lg" id="open-waitlist-modal" aria-haspopup="dialog">
+                Get early access
+              </button>
+              <a class="btn btn--outline btn--lg" href="guide.html">Website guide</a>
+            </div>
+            <div class="trust-row">
+              <span>✓ Safe &amp; Respectful Living</span>
+              <span>✓ No Scams</span>
+              <span>✓ Verified Listings</span>
+            </div>
+          </div>
+          <div class="hero-svg-wrap" aria-hidden="true">
+            <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" role="img">
+              <title>Illustration</title>
+              <defs>
+                <linearGradient id="blob" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fce4ec" />
+                  <stop offset="100%" stop-color="#e3f2fd" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="200" cy="150" rx="170" ry="120" fill="url(#blob)" opacity="0.95" />
+              <rect x="120" y="175" width="160" height="12" rx="6" fill="#f8bbd0" />
+              <rect x="145" y="130" width="110" height="70" rx="8" fill="#fff" stroke="#f48fb1" stroke-width="2" />
+              <rect x="158" y="145" width="84" height="48" rx="4" fill="#e8eaf6" />
+              <circle cx="155" cy="105" r="28" fill="#ffe0b2" />
+              <path fill="#5d4037" d="M138 88c8-18 32-22 42-8 4 6 6 14 4 22l-6 18h-28l-6-18c-4-8-6-18-12-14z" />
+              <ellipse cx="155" cy="95" rx="22" ry="20" fill="#c5b4a0" />
+              <rect x="248" y="118" width="56" height="70" rx="10" fill="#fce4ec" stroke="#f48fb1" stroke-width="2" />
+              <circle cx="276" cy="98" r="26" fill="#ffe0b2" />
+              <ellipse cx="276" cy="88" rx="24" ry="22" fill="#37474f" />
+              <path fill="#37474f" d="M252 78c10-4 22-2 30 6 6 8 8 18 6 28h-52c-2-10 0-22 16-34z" />
+              <ellipse cx="200" cy="248" rx="140" ry="14" fill="rgba(244,143,177,0.25)" />
+              <circle cx="95" cy="195" r="10" fill="#fff" stroke="#f48fb1" stroke-width="2" />
+              <path d="M91 192h8v6h-8z" fill="#f48fb1" />
+            </svg>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="section section--tint" aria-labelledby="apt-heading">
+      <div class="section__head">
+        <div>
+          <p class="section__eyebrow">Homes &amp; rooms</p>
+          <h2 id="apt-heading" class="section__title">Available apartments</h2>
+        </div>
+        <a class="link-more" href="apartments.html">View all →</a>
+      </div>
+      <div class="grid-apt">
+        <article class="card">
+          <img
+            class="card__media"
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+            alt=""
+          />
+          <div class="card__body">
+            <h3 class="card__title">Croatian Old Villa</h3>
+            <p class="card__meta">📍 Monaco, Umag, Croatia</p>
+            <div class="card__tags"><span class="tag">4 beds · 2 baths</span></div>
+            <p class="card__price">$1,550 / month</p>
+            <div class="card__footer">
+              <a class="btn btn--primary" href="apartment-detail.html">View detail</a>
+              <button type="button" class="icon-btn" aria-label="Save">♡</button>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <img
+            class="card__media"
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+            alt=""
+          />
+          <div class="card__body">
+            <h3 class="card__title">Georgetown Row House</h3>
+            <p class="card__meta">📍 Washington, D.C.</p>
+            <div class="card__tags"><span class="tag">2 beds · 1 bath</span></div>
+            <p class="card__price">$1,200 / month</p>
+            <div class="card__footer">
+              <a class="btn btn--primary" href="apartment-detail.html">View detail</a>
+              <button type="button" class="icon-btn" aria-label="Save">♡</button>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <img
+            class="card__media"
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+            alt=""
+          />
+          <div class="card__body">
+            <h3 class="card__title">Arlington Garden Unit</h3>
+            <p class="card__meta">📍 Arlington, VA</p>
+            <div class="card__tags"><span class="tag">Studio · 1 bath</span></div>
+            <p class="card__price">$980 / month</p>
+            <div class="card__footer">
+              <a class="btn btn--primary" href="apartment-detail.html">View detail</a>
+              <button type="button" class="icon-btn" aria-label="Save">♡</button>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <img
+            class="card__media"
+            src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80"
+            alt=""
+          />
+          <div class="card__body">
+            <h3 class="card__title">Harbor View Loft</h3>
+            <p class="card__meta">📍 Baltimore, MD</p>
+            <div class="card__tags"><span class="tag">1 bed · 1 bath</span></div>
+            <p class="card__price">$1,350 / month</p>
+            <div class="card__footer">
+              <a class="btn btn--primary" href="apartment-detail.html">View detail</a>
+              <button type="button" class="icon-btn" aria-label="Save">♡</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="rm-heading">
+      <div class="section__head">
+        <div>
+          <p class="section__eyebrow">People</p>
+          <h2 id="rm-heading" class="section__title">Available roommates</h2>
+        </div>
+        <a class="link-more" href="roommate-matching.html">View all →</a>
+      </div>
+      <div class="grid-4">
+        <article class="card roommate-card">
+          <img
+            class="avatar"
+            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Lisa"
+            alt=""
+          />
+          <h3 class="card__title">Lisa</h3>
+          <p class="card__meta">Arlington, VA</p>
+          <p class="card__price">$1,550–2,000 / mo</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Quiet</span>
+            <span class="tag tag--neutral">Clean</span>
+            <span class="tag tag--neutral">Careful</span>
+          </div>
+          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">View profile</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Jan 1 – Feb 1</p>
+        </article>
+        <article class="card roommate-card">
+          <img
+            class="avatar"
+            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Omar"
+            alt=""
+          />
+          <h3 class="card__title">Omar H.</h3>
+          <p class="card__meta">Boston, MA</p>
+          <p class="card__price">$1,100–1,400 / mo</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Non-smoker</span>
+            <span class="tag tag--neutral">Organized</span>
+          </div>
+          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">View profile</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Feb 1 – Aug 1</p>
+        </article>
+        <article class="card roommate-card">
+          <img
+            class="avatar"
+            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Aisha"
+            alt=""
+          />
+          <h3 class="card__title">Aisha M.</h3>
+          <p class="card__meta">Chicago, IL</p>
+          <p class="card__price">$900–1,200 / mo</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Early riser</span>
+            <span class="tag tag--neutral">Halal kitchen</span>
+          </div>
+          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">View profile</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Mar 1 – Jun 1</p>
+        </article>
+        <article class="card roommate-card">
+          <img
+            class="avatar"
+            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Yusuf"
+            alt=""
+          />
+          <h3 class="card__title">Yusuf K.</h3>
+          <p class="card__meta">Dallas, TX</p>
+          <p class="card__price">$800–1,000 / mo</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Quiet</span>
+            <span class="tag tag--neutral">Flexible</span>
+          </div>
+          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">View profile</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Apr 1 – Dec 1</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="res-heading">
+      <div class="section__head">
+        <div>
+          <p class="section__eyebrow">Tips &amp; guides</p>
+          <h2 id="res-heading" class="section__title">Helpful resources</h2>
+        </div>
+        <a class="link-more" href="#">View all →</a>
+      </div>
+      <p class="section__intro section__intro--tight">Insurance, halal food, prayer spots—short reads, big photos.</p>
+      <div class="grid-4 resource-grid">
+        <article class="card resource-card">
+          <img
+            class="card__media"
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=640&q=80"
+            alt=""
+            width="640"
+            height="480"
+            loading="lazy"
+          />
+          <div class="card__body">
+            <h3 class="card__title">Renters insurance</h3>
+            <p class="card__meta">Cover your stuff. Compare plans without the sales pitch.</p>
+            <a class="link-more" href="#">Shop plans →</a>
+          </div>
+        </article>
+        <article class="card resource-card">
+          <img
+            class="card__media"
+            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=640&q=80"
+            alt=""
+            width="640"
+            height="480"
+            loading="lazy"
+          />
+          <div class="card__body">
+            <h3 class="card__title">Travel insurance</h3>
+            <p class="card__meta">Flying home or weekend trips—pick what fits students.</p>
+            <a class="link-more" href="#">See options →</a>
+          </div>
+        </article>
+        <article class="card resource-card">
+          <img
+            class="card__media"
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=640&q=80"
+            alt=""
+            width="640"
+            height="480"
+            loading="lazy"
+          />
+          <div class="card__body">
+            <h3 class="card__title">Halal restaurants</h3>
+            <p class="card__meta">DMV picks: quick lunch to worth-the-drive dinner.</p>
+            <a class="link-more" href="#">Open list →</a>
+          </div>
+        </article>
+        <article class="card resource-card">
+          <img
+            class="card__media"
+            src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&q=80"
+            alt="Mosque dome and minarets at dusk"
+            width="800"
+            height="533"
+            loading="lazy"
+          />
+          <div class="card__body">
+            <h3 class="card__title">Prayer &amp; mosques</h3>
+            <p class="card__meta">Jummah times, parking, spots near campus.</p>
+            <a class="link-more" href="#">View map →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="partners-strip" aria-label="Trusted partners">
+      <div class="partners-strip__inner">
+        <p class="section__eyebrow" style="margin-bottom: 0.75rem">Trusted partners</p>
+        <div class="partners-strip__logos">
+          <span>GEORGETOWN</span>
+          <span>GW</span>
+          <span>JOHNS HOPKINS</span>
+          <span>CHG</span>
+          <span>APARTMENT GUIDE</span>
+          <span>YELP</span>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="waitlist-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="waitlist-modal-title"
+      aria-hidden="true"
+      hidden
+    >
+      <div class="modal__backdrop" data-close-waitlist tabindex="-1"></div>
+      <div class="modal__panel">
+        <button type="button" class="modal__close" data-close-waitlist aria-label="Close">×</button>
+        <div id="waitlist-form-step">
+          <p class="modal__eyebrow">Launch list</p>
+          <h2 id="waitlist-modal-title" class="modal__title">Get early access</h2>
+          <div class="modal__stats" role="group" aria-label="Launch snapshot">
+            <div class="modal__stat">
+              <p class="modal__stat-value"><span data-waitlist-count>500</span>+</p>
+              <p class="modal__stat-label">Early members</p>
+            </div>
+            <div class="modal__stat">
+              <p class="modal__stat-value">Aug 2026</p>
+              <p class="modal__stat-label">Launch date</p>
+            </div>
+            <div class="modal__stat">
+              <p class="modal__stat-value">100%</p>
+              <p class="modal__stat-label">Browse free</p>
+            </div>
+          </div>
+          <p class="modal__launch-hint">
+            <strong>Launch discount</strong> — we’ll email your code when we open.
+          </p>
+          <form id="waitlist-form" class="waitlist-form" method="post" target="waitlist-gform-iframe" novalidate>
+            <label class="field">
+              Name
+              <input type="text" name="name" id="waitlist-name" autocomplete="name" required placeholder="Your name" />
+            </label>
+            <label class="field">
+              Email
+              <input type="email" name="email" id="waitlist-email" autocomplete="email" required placeholder="you@example.com" />
+            </label>
+            <button type="submit" class="btn btn--primary btn--block btn--lg">Save my spot</button>
+          </form>
+        </div>
+        <div id="waitlist-success-step" class="is-hidden">
+          <p class="modal__success-icon" aria-hidden="true">✓</p>
+          <h2 class="modal__title">You’re on the list</h2>
+          <p class="modal__lede">
+            When we launch, we’ll send a message to your inbox with your <strong>discount code</strong> for posting your place.
+          </p>
+          <button type="button" class="btn btn--primary btn--block" data-close-waitlist>Close</button>
+        </div>
+      </div>
+      <iframe
+        id="waitlist-gform-iframe"
+        name="waitlist-gform-iframe"
+        title="Form submission"
+        src="about:blank"
+        class="waitlist-gform-iframe"
+      ></iframe>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#">About</a>
+          <a href="#">Help</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+        <div class="footer-bottom">
+          <div>https://halalroomies.com/</div>
+          <div>questions@halalroomies.com · +1 (123) 456-7890</div>
+          <div class="social" aria-label="Social">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="X">𝕏</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Google Form: set GOOGLE_FORM_* in script below to post signups to a Sheet. -->
+    <script>
+      (function () {
+        var WAITLIST_DISPLAY_NUMBER = "500";
+        var GOOGLE_FORM_ACTION =
+          "https://docs.google.com/forms/d/e/REPLACE_FORM_ID/formResponse";
+        var GOOGLE_ENTRY_NAME = "entry.REPLACE_NAME_ID";
+        var GOOGLE_ENTRY_EMAIL = "entry.REPLACE_EMAIL_ID";
+        var demoMode =
+          GOOGLE_FORM_ACTION.indexOf("REPLACE_FORM_ID") !== -1 ||
+          GOOGLE_ENTRY_NAME.indexOf("REPLACE") !== -1;
+
+        var modal = document.getElementById("waitlist-modal");
+        var openBtn = document.getElementById("open-waitlist-modal");
+        var form = document.getElementById("waitlist-form");
+        var formStep = document.getElementById("waitlist-form-step");
+        var successStep = document.getElementById("waitlist-success-step");
+
+        document.querySelectorAll("[data-waitlist-count]").forEach(function (el) {
+          el.textContent = WAITLIST_DISPLAY_NUMBER;
+        });
+
+        function openModal() {
+          modal.hidden = false;
+          modal.removeAttribute("hidden");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+          var first = document.getElementById("waitlist-name");
+          if (first) first.focus();
+        }
+
+        function closeModal() {
+          modal.setAttribute("aria-hidden", "true");
+          modal.hidden = true;
+          modal.setAttribute("hidden", "");
+          document.body.style.overflow = "";
+          if (openBtn) openBtn.focus();
+          formStep.classList.remove("is-hidden");
+          successStep.classList.add("is-hidden");
+          if (form) form.reset();
+        }
+
+        if (openBtn) openBtn.addEventListener("click", openModal);
+        document.querySelectorAll("[data-close-waitlist]").forEach(function (btn) {
+          btn.addEventListener("click", closeModal);
+        });
+
+        modal.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeModal();
+        });
+
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            var name = document.getElementById("waitlist-name").value.trim();
+            var email = document.getElementById("waitlist-email").value.trim();
+            if (!name || !email) {
+              e.preventDefault();
+              return;
+            }
+            if (demoMode) {
+              e.preventDefault();
+              formStep.classList.add("is-hidden");
+              successStep.classList.remove("is-hidden");
+              return;
+            }
+            e.preventDefault();
+            var iframeForm = document.createElement("form");
+            iframeForm.action = GOOGLE_FORM_ACTION;
+            iframeForm.method = "POST";
+            iframeForm.target = "waitlist-gform-iframe";
+            iframeForm.style.display = "none";
+            var inName = document.createElement("input");
+            inName.name = GOOGLE_ENTRY_NAME;
+            inName.value = name;
+            var inEmail = document.createElement("input");
+            inEmail.name = GOOGLE_ENTRY_EMAIL;
+            inEmail.value = email;
+            iframeForm.appendChild(inName);
+            iframeForm.appendChild(inEmail);
+            document.body.appendChild(iframeForm);
+            iframeForm.submit();
+            document.body.removeChild(iframeForm);
+            formStep.classList.add("is-hidden");
+            successStep.classList.remove("is-hidden");
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
