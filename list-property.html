@@ -46,7 +46,20 @@
     </div>
 
     <div class="form-shell form-shell--wide">
-      <form class="form-card" action="apartments.html" method="get">
+      <p
+        id="supabase-status"
+        role="status"
+        style="display: none; margin: 0 0 0.75rem; padding: 0.75rem 1rem; border-radius: var(--radius, 12px); font-size: 0.9rem"
+      ></p>
+      <p
+        id="listing-script-error"
+        class="listing-script-error"
+        role="alert"
+        style="display: none; margin: 0 0 1rem; padding: 0.75rem 1rem; border-radius: var(--radius, 12px); background: #fff3cd; color: #664d03; font-size: 0.9rem"
+      >
+        Listings script failed to load. Hard-refresh the page (Cmd+Shift+R).
+      </p>
+      <form id="listing-form" class="form-card" action="apartments.html" method="get">
         <h2 class="form-section-title">Property information</h2>
         <div class="form-grid">
           <label class="field">
@@ -122,23 +135,41 @@
 
         <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0" />
 
+        <h2 class="form-section-title">Property photos</h2>
+        <p class="property-photos__hint">Upload photos of your home from your computer (up to 8 images).</p>
+        <div class="property-photos">
+          <label class="property-photos__upload upload-circle" for="property-photos-input">
+            <span class="property-photos__upload-text">Upload<br />home photos</span>
+            <input
+              id="property-photos-input"
+              type="file"
+              accept="image/jpeg,image/png,image/webp,image/gif"
+              multiple
+              hidden
+            />
+          </label>
+          <div id="property-photos-preview" class="property-photos__preview-grid" aria-live="polite"></div>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0" />
+
         <h2 class="form-section-title">Landlord information</h2>
-        <div class="form-grid" style="grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start">
-          <div class="upload-circle">Upload<br />photo</div>
-          <div class="form-grid">
-            <label class="field">
-              Full name
-              <input type="text" name="landlord" autocomplete="name" />
-            </label>
-            <label class="field">
-              Email address
-              <input type="email" name="lemail" autocomplete="email" />
-            </label>
-            <label class="field">
-              Phone number
-              <input type="tel" name="phone" autocomplete="tel" />
-            </label>
-          </div>
+        <p class="property-photos__hint" style="margin-top: -0.35rem">
+          Your contact details only — profile picture is generated automatically (no photo upload).
+        </p>
+        <div class="form-grid">
+          <label class="field">
+            Full name
+            <input type="text" name="landlord" autocomplete="name" />
+          </label>
+          <label class="field">
+            Email address
+            <input type="email" name="lemail" autocomplete="email" />
+          </label>
+          <label class="field">
+            Phone number
+            <input type="tel" name="phone" autocomplete="tel" />
+          </label>
         </div>
 
         <button type="submit" class="btn btn--primary btn--block btn--lg" style="margin-top: 2rem">Post my listing</button>
@@ -164,5 +195,141 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      window.HALAL_SUPABASE_CONFIG = {
+        url: "https://joecgybyakaylyprlzpi.supabase.co",
+        anonKey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvZWNneWJ5YWtheWx5cHJsenBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMjkwNDAsImV4cCI6MjA5NjYwNTA0MH0.Iv1ty8s4FVV5TeOxOAkan5aNG9-B-NNC6inrrPuB9es",
+      };
+      window.HalalSupabase = {
+        BUCKET: "listing-photos",
+        isConfigured: function () {
+          var c = window.HALAL_SUPABASE_CONFIG;
+          return !!(c && c.url && c.anonKey);
+        },
+        isReady: function () {
+          return !!this.getClient();
+        },
+        getClient: function () {
+          if (!window.supabase || typeof window.supabase.createClient !== "function") return null;
+          if (!window._halalSupabaseClient) {
+            var c = window.HALAL_SUPABASE_CONFIG;
+            window._halalSupabaseClient = window.supabase.createClient(c.url, c.anonKey);
+          }
+          return window._halalSupabaseClient;
+        },
+      };
+    </script>
+    <script src="js/vendor/supabase.min.js?v=7"></script>
+    <script src="js/listings-store.js?v=7"></script>
+    <script src="js/listings-remote.js?v=7"></script>
+    <script src="js/supabase-status.js?v=7"></script>
+    <script>
+      if (window.HalalSupabaseStatus) HalalSupabaseStatus.refresh();
+    </script>
+    <script>
+      (function () {
+        var form = document.getElementById("listing-form");
+        var warn = document.getElementById("listing-script-error");
+        var fileInput = document.getElementById("property-photos-input");
+        var previewEl = document.getElementById("property-photos-preview");
+        var selectedImages = [];
+        var maxPhotos = 8;
+
+        if (!form) return;
+
+        if (window.HalalRoomiesListings) {
+          maxPhotos = HalalRoomiesListings.MAX_PROPERTY_PHOTOS || 8;
+        } else if (warn) {
+          warn.style.display = "block";
+        }
+
+        function renderPreviews() {
+          if (!previewEl) return;
+          previewEl.innerHTML = "";
+          selectedImages.forEach(function (dataUrl, index) {
+            var item = document.createElement("div");
+            item.className = "property-photos__thumb";
+            item.innerHTML =
+              '<img src="' +
+              dataUrl +
+              '" alt="Property photo ' +
+              (index + 1) +
+              '" />' +
+              '<button type="button" class="property-photos__remove" data-index="' +
+              index +
+              '" aria-label="Remove photo">×</button>';
+            previewEl.appendChild(item);
+          });
+        }
+
+        if (fileInput) {
+          fileInput.addEventListener("change", function () {
+            if (!window.HalalRoomiesListings) return;
+            var files = Array.from(fileInput.files || []);
+            fileInput.value = "";
+            if (!files.length) return;
+
+            var slots = maxPhotos - selectedImages.length;
+            if (slots <= 0) {
+              alert("You can upload up to " + maxPhotos + " photos. Remove one to add more.");
+              return;
+            }
+
+            var batch = files.slice(0, slots);
+            Promise.all(
+              batch.map(function (file) {
+                return HalalRoomiesListings.compressImageFile(file);
+              })
+            )
+              .then(function (dataUrls) {
+                selectedImages = selectedImages.concat(dataUrls).slice(0, maxPhotos);
+                renderPreviews();
+              })
+              .catch(function () {
+                alert("Could not load one or more images. Please use JPG or PNG.");
+              });
+          });
+        }
+
+        if (previewEl) {
+          previewEl.addEventListener("click", function (e) {
+            var btn = e.target.closest(".property-photos__remove");
+            if (!btn) return;
+            var idx = parseInt(btn.getAttribute("data-index"), 10);
+            if (isNaN(idx)) return;
+            selectedImages.splice(idx, 1);
+            renderPreviews();
+          });
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (!window.HalalRoomiesListings || !HalalRoomiesListings.saveListingAsync) return;
+          var fd = new FormData(form);
+          var title = (fd.get("title") || "").toString().trim();
+          if (!title) return;
+          var submitBtn = form.querySelector('button[type="submit"]');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Posting…";
+          }
+          HalalRoomiesListings.saveListingAsync(fd, { images: selectedImages })
+            .then(function () {
+              window.location.href = "apartments.html";
+            })
+            .catch(function (err) {
+              console.error(err);
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Post my listing";
+              }
+              var msg = (err && err.message) || "Could not save listing.";
+              alert(msg + " Check your connection and Supabase setup, or try fewer photos.");
+            });
+        });
+      })();
+    </script>
   </body>
 </html>

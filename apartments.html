@@ -42,10 +42,37 @@
             <p class="section__eyebrow">Browse</p>
             <h1 class="section__title">Available apartments and rooms</h1>
           </div>
-          <a class="btn btn--muted" href="listing-plans.html">Post my property</a>
+          <a class="btn btn--muted" href="list-property.html">Post my property</a>
         </div>
 
-        <div class="grid-apt">
+        <p
+          id="supabase-status"
+          role="status"
+          style="
+            display: none;
+            margin: 0 0 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius, 12px);
+            font-size: 0.9rem;
+          "
+        ></p>
+        <p
+          id="listings-script-error"
+          role="alert"
+          style="
+            display: none;
+            margin: 0 0 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius, 12px);
+            background: #fff3cd;
+            color: #664d03;
+            font-size: 0.9rem;
+          "
+        >
+          Could not load listings. Check <code>js/supabase-config.js</code> and your network, then hard-refresh.
+        </p>
+
+        <div id="listings-grid" class="grid-apt">
           <article class="card">
             <div style="position: relative">
               <img
@@ -60,7 +87,7 @@
               <p class="card__meta">📍 Monaco, Umag, Croatia</p>
               <p class="card__price">$1,550 / month</p>
               <div class="card__tags"><span class="tag">4 beds · 2 baths</span></div>
-              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html?sample=1" style="margin-top: 0.75rem">View detail</a>
             </div>
           </article>
           <article class="card">
@@ -77,7 +104,7 @@
               <p class="card__meta">📍 Washington, D.C.</p>
               <p class="card__price">$1,200 / month</p>
               <div class="card__tags"><span class="tag">2 beds · 1 bath</span></div>
-              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html?sample=1" style="margin-top: 0.75rem">View detail</a>
             </div>
           </article>
           <article class="card">
@@ -94,7 +121,7 @@
               <p class="card__meta">📍 Arlington, VA</p>
               <p class="card__price">$980 / month</p>
               <div class="card__tags"><span class="tag">Studio · 1 bath</span></div>
-              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html?sample=1" style="margin-top: 0.75rem">View detail</a>
             </div>
           </article>
           <article class="card">
@@ -111,7 +138,7 @@
               <p class="card__meta">📍 Baltimore, MD</p>
               <p class="card__price">$1,350 / month</p>
               <div class="card__tags"><span class="tag">1 bed · 1 bath</span></div>
-              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html?sample=1" style="margin-top: 0.75rem">View detail</a>
             </div>
           </article>
           <article class="card">
@@ -128,7 +155,7 @@
               <p class="card__meta">📍 Philadelphia, PA</p>
               <p class="card__price">$1,100 / month</p>
               <div class="card__tags"><span class="tag">2 beds · 1 bath</span></div>
-              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html?sample=1" style="margin-top: 0.75rem">View detail</a>
             </div>
           </article>
           <article class="card">
@@ -145,7 +172,7 @@
               <p class="card__meta">📍 Fairfax, VA</p>
               <p class="card__price">$1,450 / month</p>
               <div class="card__tags"><span class="tag">3 beds · 2 baths</span></div>
-              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html?sample=1" style="margin-top: 0.75rem">View detail</a>
             </div>
           </article>
           <article class="card">
@@ -162,7 +189,7 @@
               <p class="card__meta">📍 Rockville, MD</p>
               <p class="card__price">$1,050 / month</p>
               <div class="card__tags"><span class="tag">1 bed · 1 bath</span></div>
-              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html?sample=1" style="margin-top: 0.75rem">View detail</a>
             </div>
           </article>
           <article class="card">
@@ -179,7 +206,7 @@
               <p class="card__meta">📍 College Park, MD</p>
               <p class="card__price">$890 / month</p>
               <div class="card__tags"><span class="tag">2 beds · 1 bath</span></div>
-              <a class="btn btn--primary btn--block" href="apartment-detail.html" style="margin-top: 0.75rem">View detail</a>
+              <a class="btn btn--primary btn--block" href="apartment-detail.html?sample=1" style="margin-top: 0.75rem">View detail</a>
             </div>
           </article>
         </div>
@@ -219,5 +246,64 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      window.HALAL_SUPABASE_CONFIG = {
+        url: "https://joecgybyakaylyprlzpi.supabase.co",
+        anonKey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvZWNneWJ5YWtheWx5cHJsenBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMjkwNDAsImV4cCI6MjA5NjYwNTA0MH0.Iv1ty8s4FVV5TeOxOAkan5aNG9-B-NNC6inrrPuB9es",
+      };
+      window.HalalSupabase = {
+        BUCKET: "listing-photos",
+        isConfigured: function () {
+          var c = window.HALAL_SUPABASE_CONFIG;
+          return !!(c && c.url && c.anonKey);
+        },
+        isReady: function () {
+          return !!this.getClient();
+        },
+        getClient: function () {
+          if (!window.supabase || typeof window.supabase.createClient !== "function") return null;
+          if (!window._halalSupabaseClient) {
+            var c = window.HALAL_SUPABASE_CONFIG;
+            window._halalSupabaseClient = window.supabase.createClient(c.url, c.anonKey);
+          }
+          return window._halalSupabaseClient;
+        },
+      };
+    </script>
+    <script src="js/vendor/supabase.min.js?v=7"></script>
+    <script src="js/listings-store.js?v=7"></script>
+    <script src="js/listings-remote.js?v=7"></script>
+    <script src="js/supabase-status.js?v=7"></script>
+    <script>
+      if (window.HalalSupabaseStatus) HalalSupabaseStatus.refresh();
+    </script>
+    <script>
+      (function () {
+        var grid = document.getElementById("listings-grid");
+        var warn = document.getElementById("listings-script-error");
+        if (!grid) return;
+        if (!window.HalalRoomiesListings || !HalalRoomiesListings.readAllAsync) {
+          if (warn) warn.style.display = "block";
+          return;
+        }
+
+        HalalRoomiesListings.readAllAsync()
+          .then(function (listings) {
+            listings.forEach(function (L) {
+              grid.insertAdjacentHTML("afterbegin", HalalRoomiesListings.cardMarkup(L));
+            });
+          })
+          .catch(function (err) {
+            console.error(err);
+            if (warn) {
+              warn.textContent =
+                "Could not load listings from Supabase. Check js/supabase-config.local.js and your network.";
+              warn.style.display = "block";
+            }
+          });
+      })();
+    </script>
   </body>
 </html>

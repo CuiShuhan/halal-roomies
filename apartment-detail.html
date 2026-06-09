@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Croatian Old Villa — Halal Roomies</title>
+    <title>Listing detail — Halal Roomies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,136 +31,152 @@
       </div>
     </header>
 
-    <section class="detail-hero" aria-labelledby="prop-title">
-      <div
-        class="hero__bg"
-        style="min-height: 320px; background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85')"
-      ></div>
-      <div class="hero__overlay" style="position: absolute; inset: 0"></div>
-      <div class="hero__inner" style="position: absolute; inset: 0; display: flex; align-items: flex-end; padding-bottom: 1.5rem">
-        <div style="flex: 1">
-          <h1 id="prop-title" class="page-title" style="color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,0.35)">Croatian Old Villa</h1>
-          <p class="page-lead detail-hero__location">📍 Monaco, Umag, Croatia</p>
+    <section id="detail-placeholder" class="section section--tint" style="padding: 3rem 1rem">
+      <div class="form-shell" style="max-width: 28rem; margin: 0 auto; text-align: center">
+        <p class="section__eyebrow" style="justify-content: center">Listing detail</p>
+        <h1 id="detail-placeholder-title" class="section__title" style="margin-top: 0.35rem">No listing open</h1>
+        <p id="detail-placeholder-msg" class="page-lead" style="margin-top: 0.65rem; color: var(--text-muted); font-size: 1rem">
+          Choose a place from Browse, or post your own listing.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.65rem; justify-content: center; margin-top: 1.35rem">
+          <a class="btn btn--primary btn--lg" href="apartments.html">Browse apartments</a>
+          <a class="btn btn--outline btn--lg" href="list-property.html">Post a property</a>
         </div>
-        <div class="detail-hero__price">$1,550 / mo</div>
       </div>
     </section>
 
-    <div class="gallery">
-      <div class="gallery__main">
-        <img
-          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80"
-          alt="Living area"
-          style="width: 100%; height: 100%; object-fit: cover; min-height: 280px"
-        />
-      </div>
-      <div class="gallery__grid">
-        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=600&q=80" alt="" />
-        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80" alt="" />
-      </div>
-    </div>
-
-    <section class="detail-section" aria-labelledby="detail-heading">
-      <h2 id="detail-heading" class="form-section-title detail-section__title">Property details</h2>
-      <div class="detail-layout">
-        <div class="detail-features">
-          <div class="feature-grid" role="list">
-            <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
-              <div style="font-size: 1.5rem" aria-hidden="true">📐</div>
-              <p style="margin: 0.35rem 0 0; font-weight: 700">Layout</p>
-              <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">Studio</p>
-            </div>
-            <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
-              <div style="font-size: 1.5rem" aria-hidden="true">🛏</div>
-              <p style="margin: 0.35rem 0 0; font-weight: 700">Bedrooms</p>
-              <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">2</p>
-            </div>
-            <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
-              <div style="font-size: 1.5rem" aria-hidden="true">🛁</div>
-              <p style="margin: 0.35rem 0 0; font-weight: 700">Bathrooms</p>
-              <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">2</p>
-            </div>
-            <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
-              <div style="font-size: 1.5rem" aria-hidden="true">📅</div>
-              <p style="margin: 0.35rem 0 0; font-weight: 700">Available</p>
-              <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">From May 1</p>
-            </div>
-            <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
-              <div style="font-size: 1.5rem" aria-hidden="true">🪑</div>
-              <p style="margin: 0.35rem 0 0; font-weight: 700">Furniture</p>
-              <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">Yes</p>
-            </div>
-            <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
-              <div style="font-size: 1.5rem" aria-hidden="true">📄</div>
-              <p style="margin: 0.35rem 0 0; font-weight: 700">Lease term</p>
-              <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">12 months</p>
-            </div>
+    <div id="detail-listing-body" hidden>
+      <section class="detail-hero" aria-labelledby="prop-title">
+        <div
+          id="detail-hero-bg"
+          class="hero__bg"
+          style="min-height: 320px; background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85')"
+        ></div>
+        <div class="hero__overlay" style="position: absolute; inset: 0"></div>
+        <div
+          class="hero__inner"
+          style="position: absolute; inset: 0; display: flex; align-items: flex-end; padding-bottom: 1.5rem"
+        >
+          <div style="flex: 1">
+            <h1 id="prop-title" class="page-title" style="color: #fff; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35)">
+              Croatian Old Villa
+            </h1>
+            <p id="detail-location" class="page-lead detail-hero__location">📍 Monaco, Umag, Croatia</p>
           </div>
+          <div id="detail-price" class="detail-hero__price">$1,550 / mo</div>
         </div>
+      </section>
 
-        <div class="detail-middle">
-          <div class="detail-mini-grid" role="list">
-            <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
-              <div style="font-size: 1.5rem" aria-hidden="true">📏</div>
-              <p style="margin: 0.35rem 0 0; font-weight: 700">Square feet</p>
-              <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">1,240 sq ft</p>
-            </div>
-            <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
-              <div style="font-size: 1.5rem" aria-hidden="true">📅</div>
-              <p style="margin: 0.35rem 0 0; font-weight: 700">Year built</p>
-              <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">2018</p>
+      <div class="gallery">
+        <div class="gallery__main">
+          <img
+            id="detail-gallery-hero"
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80"
+            alt="Living area"
+            style="width: 100%; height: 100%; object-fit: cover; min-height: 280px"
+          />
+        </div>
+        <div id="detail-gallery-grid" class="gallery__grid">
+          <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=600&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80" alt="" />
+        </div>
+      </div>
+
+      <section class="detail-section" aria-labelledby="detail-heading">
+        <h2 id="detail-heading" class="form-section-title detail-section__title">Property details</h2>
+        <div class="detail-layout">
+          <div class="detail-features">
+            <div class="feature-grid" role="list">
+              <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
+                <div style="font-size: 1.5rem" aria-hidden="true">📐</div>
+                <p style="margin: 0.35rem 0 0; font-weight: 700">Layout</p>
+                <p id="detail-val-type" style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">Studio</p>
+              </div>
+              <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
+                <div style="font-size: 1.5rem" aria-hidden="true">🛏</div>
+                <p style="margin: 0.35rem 0 0; font-weight: 700">Bedrooms</p>
+                <p id="detail-val-beds" style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">2</p>
+              </div>
+              <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
+                <div style="font-size: 1.5rem" aria-hidden="true">🛁</div>
+                <p style="margin: 0.35rem 0 0; font-weight: 700">Bathrooms</p>
+                <p id="detail-val-baths" style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">2</p>
+              </div>
+              <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
+                <div style="font-size: 1.5rem" aria-hidden="true">📅</div>
+                <p style="margin: 0.35rem 0 0; font-weight: 700">Available</p>
+                <p id="detail-val-start" style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">From May 1</p>
+              </div>
+              <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
+                <div style="font-size: 1.5rem" aria-hidden="true">🪑</div>
+                <p style="margin: 0.35rem 0 0; font-weight: 700">Furniture</p>
+                <p id="detail-val-furn" style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">Yes</p>
+              </div>
+              <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
+                <div style="font-size: 1.5rem" aria-hidden="true">📄</div>
+                <p style="margin: 0.35rem 0 0; font-weight: 700">Lease term</p>
+                <p id="detail-val-lease" style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">12 months</p>
+              </div>
             </div>
           </div>
-          <aside class="card detail-landlord-card" aria-labelledby="landlord-card-title">
-            <h3 id="landlord-card-title" class="detail-landlord-card__title">Contact landlord</h3>
-            <div class="detail-landlord-card__body">
-              <div class="detail-landlord-row">
-                <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80"
-                  alt=""
-                  width="64"
-                  height="64"
-                  style="border-radius: 50%; object-fit: cover"
-                />
-                <div>
-                  <p style="margin: 0; font-weight: 800">John Smith</p>
-                  <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted)">john@example.com</p>
+
+          <div class="detail-middle">
+            <aside class="card detail-landlord-card" aria-labelledby="landlord-card-title">
+              <h3 id="landlord-card-title" class="detail-landlord-card__title">Contact landlord</h3>
+              <div class="detail-landlord-card__body">
+                <div class="detail-landlord-row">
+                  <img
+                    id="detail-landlord-avatar"
+                    src="https://api.dicebear.com/9.x/adventurer/svg?seed=JohnSmith"
+                    alt=""
+                    width="80"
+                    height="80"
+                    style="border-radius: 50%; object-fit: cover; background: var(--bg-pink)"
+                  />
+                  <div>
+                    <p id="detail-landlord-name" style="margin: 0; font-weight: 800">John Smith</p>
+                    <p id="detail-landlord-email" style="margin: 0; font-size: 0.9rem; color: var(--text-muted)">john@example.com</p>
+                  </div>
                 </div>
+                <p id="detail-landlord-phone-line" style="margin: 0; font-size: 0.95rem">📞 +1 (555) 010-2030</p>
+                <a id="detail-landlord-mailto" class="btn btn--primary btn--block detail-landlord-cta" href="mailto:john@example.com"
+                  >Email landlord</a
+                >
               </div>
-              <p style="margin: 0; font-size: 0.95rem">📞 +1 (555) 010-2030</p>
-              <a class="btn btn--primary btn--block detail-landlord-cta" href="mailto:john@example.com">Email landlord</a>
+            </aside>
+          </div>
+
+          <aside class="card detail-side-card detail-map-card" aria-labelledby="map-risk-title">
+            <div class="detail-column-head">
+              <h3 id="map-risk-title" class="detail-side-card__title">Area safety heat map</h3>
+              <p class="detail-side-card__meta">Illustrative map for neighborhood context (not official crime data).</p>
+            </div>
+            <div class="detail-map-stack">
+              <div class="detail-map-frame">
+                <iframe
+                  id="detail-map-a"
+                  title="Street map near listing"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps?q=Umag%20Croatia&output=embed&hl=en&gl=us"
+                ></iframe>
+              </div>
+              <div class="detail-map-frame">
+                <iframe
+                  id="detail-map-b"
+                  title="Area overview map"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps?q=Monaco%20Croatia&output=embed&hl=en&gl=us"
+                ></iframe>
+              </div>
             </div>
           </aside>
         </div>
-
-        <aside class="card detail-side-card detail-map-card" aria-labelledby="map-risk-title">
-          <div class="detail-column-head">
-            <h3 id="map-risk-title" class="detail-side-card__title">Area safety heat map</h3>
-            <p class="detail-side-card__meta">Illustrative map for neighborhood context (not official crime data).</p>
-          </div>
-          <div class="detail-map-stack">
-            <div class="detail-map-frame">
-              <iframe
-                title="Street map near listing"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Umag%20Croatia&output=embed&hl=en&gl=us"
-              ></iframe>
-            </div>
-            <div class="detail-map-frame">
-              <iframe
-                title="Area overview map"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Monaco%20Croatia&output=embed&hl=en&gl=us"
-              ></iframe>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <footer class="site-footer">
       <div class="site-footer__inner">
@@ -181,5 +197,174 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      window.HALAL_SUPABASE_CONFIG = {
+        url: "https://joecgybyakaylyprlzpi.supabase.co",
+        anonKey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvZWNneWJ5YWtheWx5cHJsenBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMjkwNDAsImV4cCI6MjA5NjYwNTA0MH0.Iv1ty8s4FVV5TeOxOAkan5aNG9-B-NNC6inrrPuB9es",
+      };
+      window.HalalSupabase = {
+        BUCKET: "listing-photos",
+        isConfigured: function () {
+          var c = window.HALAL_SUPABASE_CONFIG;
+          return !!(c && c.url && c.anonKey);
+        },
+        isReady: function () {
+          return !!this.getClient();
+        },
+        getClient: function () {
+          if (!window.supabase || typeof window.supabase.createClient !== "function") return null;
+          if (!window._halalSupabaseClient) {
+            var c = window.HALAL_SUPABASE_CONFIG;
+            window._halalSupabaseClient = window.supabase.createClient(c.url, c.anonKey);
+          }
+          return window._halalSupabaseClient;
+        },
+      };
+    </script>
+    <script src="js/vendor/supabase.min.js?v=7"></script>
+    <script src="js/listings-store.js?v=7"></script>
+    <script src="js/listings-remote.js?v=7"></script>
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get("id");
+        var sample = params.get("sample") === "1";
+        var placeholder = document.getElementById("detail-placeholder");
+        var body = document.getElementById("detail-listing-body");
+        var msg = document.getElementById("detail-placeholder-msg");
+        var titleEl = document.getElementById("detail-placeholder-title");
+
+        function showListingBody() {
+          placeholder.hidden = true;
+          body.hidden = false;
+        }
+
+        function showPlaceholder(notFound) {
+          placeholder.hidden = false;
+          body.hidden = true;
+          if (notFound) {
+            titleEl.textContent = "Listing not found";
+            msg.textContent = "That listing may have been removed or the link is invalid.";
+          }
+        }
+
+        function renderListing(L) {
+        showListingBody();
+        document.title = L.title + " — Halal Roomies";
+        document.getElementById("prop-title").textContent = L.title;
+        document.getElementById("detail-location").textContent = "📍 " + (L.location || "—");
+        var priceEl = document.getElementById("detail-price");
+        priceEl.textContent = HalalRoomiesListings.formatRent(L).replace(" / month", " / mo");
+
+        var coverUrl = HalalRoomiesListings.primaryImageUrl(L);
+        var galleryUrls =
+          L.images && L.images.length ? L.images : coverUrl ? [coverUrl] : [];
+
+        var heroBg = document.getElementById("detail-hero-bg");
+        if (heroBg && coverUrl) {
+          heroBg.style.backgroundImage =
+            "url('" + coverUrl.replace(/\\/g, "\\\\").replace(/'/g, "\\'") + "')";
+        }
+
+        var gHero = document.getElementById("detail-gallery-hero");
+        if (gHero && galleryUrls.length) {
+          gHero.src = galleryUrls[0];
+          gHero.alt = L.title || "Property photo";
+        }
+
+        var gGrid = document.getElementById("detail-gallery-grid");
+        if (gGrid) {
+          gGrid.innerHTML = "";
+          var extras = galleryUrls.length > 1 ? galleryUrls.slice(1) : galleryUrls;
+          extras.forEach(function (url, i) {
+            var im = document.createElement("img");
+            im.src = url;
+            im.alt = (L.title || "Property") + " photo " + (i + 2);
+            gGrid.appendChild(im);
+          });
+        }
+
+        var avatarEl = document.getElementById("detail-landlord-avatar");
+        if (avatarEl) {
+          avatarEl.src =
+            L.landlordAvatarUrl ||
+            HalalRoomiesListings.landlordAvatarUrl(L.landlord || L.lemail || L.id);
+        }
+
+        document.getElementById("detail-val-type").textContent = L.type || "—";
+        document.getElementById("detail-val-beds").textContent = L.beds || "—";
+        document.getElementById("detail-val-baths").textContent = L.baths || "—";
+        var startTxt = L.start
+          ? "From " +
+            new Date(L.start + "T12:00:00").toLocaleDateString(undefined, {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })
+          : "Not specified";
+        document.getElementById("detail-val-start").textContent = startTxt;
+        document.getElementById("detail-val-furn").textContent = L.furn === "no" ? "No" : "Yes";
+        document.getElementById("detail-val-lease").textContent = L.lease || "—";
+
+        var lm = document.getElementById("detail-landlord-mailto");
+        document.getElementById("detail-landlord-name").textContent = L.landlord || "Not provided";
+        var emailEl = document.getElementById("detail-landlord-email");
+        if (L.lemail) {
+          emailEl.textContent = L.lemail;
+          lm.href = "mailto:" + L.lemail;
+          lm.style.display = "";
+        } else {
+          emailEl.textContent = "—";
+          lm.style.display = "none";
+        }
+        var phoneLine = document.getElementById("detail-landlord-phone-line");
+        phoneLine.textContent = L.phone ? "📞 " + L.phone : "Phone not provided";
+
+        var q = (L.location || L.title || "").trim();
+        if (q && document.getElementById("detail-map-a")) {
+          var encoded = encodeURIComponent(q);
+          document.getElementById("detail-map-a").src =
+            "https://www.google.com/maps?q=" + encoded + "&output=embed&hl=en&gl=us";
+          document.getElementById("detail-map-b").src =
+            "https://www.google.com/maps?q=" + encoded + "&output=embed&hl=en&gl=us";
+        }
+        }
+
+        if (sample) {
+          showListingBody();
+          document.title = "Sample listing — Halal Roomies";
+          var sampleAvatar = document.getElementById("detail-landlord-avatar");
+          if (sampleAvatar && window.HalalRoomiesListings) {
+            sampleAvatar.src = HalalRoomiesListings.landlordAvatarUrl("John Smith");
+          }
+          return;
+        }
+
+        if (!id) {
+          showPlaceholder(false);
+          return;
+        }
+
+        if (!window.HalalRoomiesListings || !HalalRoomiesListings.getByIdAsync) {
+          showPlaceholder(true);
+          return;
+        }
+
+        HalalRoomiesListings.getByIdAsync(id)
+          .then(function (L) {
+            if (!L) {
+              showPlaceholder(true);
+              return;
+            }
+            renderListing(L);
+          })
+          .catch(function (err) {
+            console.error(err);
+            showPlaceholder(true);
+          });
+      })();
+    </script>
   </body>
 </html>

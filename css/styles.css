@@ -887,27 +887,20 @@ a:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-}
-
-.detail-mini-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  flex-shrink: 0;
 }
 
 .detail-landlord-card {
   flex: 1;
   min-height: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.15rem 1.1rem;
+  padding: 1.35rem 1.4rem 1.5rem;
 }
 
 .detail-landlord-card__title {
-  margin: 0 0 0.65rem;
-  font-size: 1.05rem;
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--navy);
 }
@@ -916,18 +909,33 @@ a:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  justify-content: center;
+  gap: 1.1rem;
   min-height: 0;
 }
 
 .detail-landlord-row {
   display: flex;
-  gap: 1rem;
+  gap: 1.15rem;
   align-items: center;
+}
+
+.detail-landlord-card .detail-landlord-row img {
+  width: 80px;
+  height: 80px;
+}
+
+.detail-landlord-card .detail-landlord-row p:first-of-type {
+  font-size: 1.1rem;
+}
+
+.detail-landlord-card #detail-landlord-phone-line {
+  font-size: 1.02rem;
 }
 
 .detail-landlord-cta {
   margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 .detail-side-card.detail-map-card {
@@ -1114,6 +1122,82 @@ label.field,
   color: var(--text-muted);
   cursor: pointer;
   background: #fffafc;
+  text-align: center;
+  line-height: 1.35;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.upload-circle:hover {
+  border-color: var(--accent);
+  background: var(--bg-pink);
+}
+
+.property-photos__hint {
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.property-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.property-photos__upload {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.property-photos__upload-text {
+  pointer-events: none;
+  padding: 0 0.35rem;
+}
+
+.property-photos__preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.property-photos__thumb {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.property-photos__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.property-photos__remove {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(30, 41, 59, 0.75);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.property-photos__remove:hover {
+  background: var(--accent-dark);
 }
 
 .segmented {

@@ -1,0 +1,8 @@
+# Supabase secrets (use supabase-config.example.js as template)
+js/supabase-config.local.js
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
