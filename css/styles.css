@@ -1,4 +1,4 @@
-/* Halal Roomies — light pink / white, shared styles */
+/* Roomdrop — light pink / white, shared styles */
 
 :root {
   --bg: #fff8fb;
@@ -167,6 +167,24 @@ a:hover {
 .header-actions {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
+}
+
+.header-actions__user {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.header-actions__avatar {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-pink);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* ---------- Buttons ---------- */
@@ -852,90 +870,141 @@ a:hover {
 
 .detail-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.95fr) minmax(0, 1fr);
-  gap: 1.25rem;
+  grid-template-columns:
+    minmax(0, 0.6fr) minmax(0, 0.6fr) minmax(0, 0.475fr) minmax(0, 0.475fr)
+    minmax(0, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 1rem;
   align-items: stretch;
 }
 
-/* Grid items need min-height:0 so nested flex/map content can shrink; height:100% fills the row for bottom alignment */
-.detail-layout > .detail-features,
-.detail-layout > .detail-middle,
+.detail-features,
+.detail-middle {
+  display: contents;
+}
+
+.detail-features .feature-grid,
+.detail-middle-features {
+  display: contents;
+}
+
+.detail-features .feature-grid > :nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.detail-features .feature-grid > :nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.detail-features .feature-grid > :nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.detail-features .feature-grid > :nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.detail-features .feature-grid > :nth-child(5) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.detail-features .feature-grid > :nth-child(6) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.detail-middle-features > :nth-child(1) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.detail-middle-features > :nth-child(2) {
+  grid-column: 4;
+  grid-row: 1;
+}
+
 .detail-layout > .detail-map-card {
+  grid-column: 5;
+  grid-row: 1 / -1;
   min-height: 0;
   align-self: stretch;
 }
 
-.detail-layout > .detail-middle,
-.detail-layout > .detail-map-card {
-  height: 100%;
-}
-
-.detail-features {
-  min-height: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.detail-features .feature-grid {
-  flex: 1;
-  align-content: start;
-}
-
-.detail-middle {
-  min-height: 0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.detail-middle-features {
+  grid-template-columns: 1fr 1fr;
 }
 
 .detail-landlord-card {
-  flex: 1;
-  min-height: 0;
+  grid-column: 3 / 5;
+  grid-row: 2 / 4;
   height: 100%;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
-  padding: 1.35rem 1.4rem 1.5rem;
+  justify-content: flex-start;
+  padding: 1.25rem 1.35rem 1.35rem;
 }
 
 .detail-landlord-card__title {
   margin: 0 0 1rem;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--navy);
 }
 
 .detail-landlord-card__body {
   flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1.1rem;
-  min-height: 0;
+  justify-content: flex-start;
 }
 
 .detail-landlord-row {
   display: flex;
-  gap: 1.15rem;
+  gap: 0.85rem;
   align-items: center;
 }
 
-.detail-landlord-card .detail-landlord-row img {
-  width: 80px;
-  height: 80px;
+.detail-landlord-avatar {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-pink);
 }
 
-.detail-landlord-card .detail-landlord-row p:first-of-type {
-  font-size: 1.1rem;
+.detail-landlord-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--navy);
 }
 
-.detail-landlord-card #detail-landlord-phone-line {
-  font-size: 1.02rem;
+.detail-landlord-email {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.detail-landlord-phone {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text);
 }
 
 .detail-landlord-cta {
   margin-top: auto;
-  padding-top: 0.5rem;
+  padding-top: 1.25rem;
 }
 
 .detail-side-card.detail-map-card {
@@ -993,10 +1062,47 @@ a:hover {
 @media (max-width: 1024px) {
   .detail-layout {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .detail-features,
+  .detail-middle {
+    display: block;
+  }
+
+  .detail-features .feature-grid,
+  .detail-middle-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .detail-features .feature-grid > *,
+  .detail-middle-features > *,
+  .detail-landlord-card {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .detail-features {
     grid-column: 1 / -1;
+  }
+
+  .detail-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    grid-column: 1;
+  }
+
+  .detail-landlord-card {
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .detail-layout > .detail-map-card {
+    grid-column: 2;
+    grid-row: 2;
   }
 }
 
@@ -1011,6 +1117,15 @@ a:hover {
 
   .detail-features {
     grid-column: auto;
+  }
+
+  .detail-middle {
+    grid-column: auto;
+  }
+
+  .detail-layout > .detail-map-card {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 
@@ -1400,6 +1515,63 @@ label.field,
   padding-top: 2rem;
 }
 
+.roommate-browse-direct {
+  max-width: var(--max);
+}
+
+.roommate-browse-direct__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: none;
+  margin: 0;
+}
+
+.roommate-browse-direct__grid .match-mini-card {
+  margin-bottom: 0;
+  padding: 0.8rem;
+}
+
+.roommate-browse-direct__grid .match-mini-card__head {
+  justify-content: flex-start;
+}
+
+.roommate-browse-direct__grid .match-mini-card__person .avatar {
+  width: 44px;
+  height: 44px;
+}
+
+.roommate-browse-direct__grid .match-mini-card__name {
+  font-size: 0.95rem;
+}
+
+.roommate-browse-direct__grid .card__meta {
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.roommate-browse-direct__grid .card__tags {
+  margin-top: 0.6rem;
+}
+
+.roommate-browse-direct__grid .roommate-card__email {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  word-break: break-all;
+}
+
+@media (max-width: 1100px) {
+  .roommate-browse-direct__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .roommate-browse-direct__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 980px) {
   .match-long-grid {
     grid-template-columns: 1fr;
@@ -1474,6 +1646,15 @@ label.field,
   padding: 1.5rem;
 }
 
+.auth-error {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius, 12px);
+  background: #f8d7da;
+  color: #842029;
+  font-size: 0.9rem;
+}
+
 .divider {
   display: flex;
   align-items: center;
@@ -1525,30 +1706,6 @@ label.field,
   .match-score {
     margin: 0 auto;
   }
-}
-
-/* Partners */
-.partners-strip {
-  padding: 2rem 1.25rem;
-  background: linear-gradient(180deg, #fff 0%, #fce4ec 100%);
-  border-top: 1px solid var(--border);
-}
-
-.partners-strip__inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  text-align: center;
-}
-
-.partners-strip__logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem 2.5rem;
-  font-weight: 800;
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
 }
 
 /* Footer */

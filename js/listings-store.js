@@ -130,6 +130,8 @@
       start: fd.get("start") || "",
       furn: fd.get("furn") === "no" ? "no" : "yes",
       lease: String(fd.get("lease") || "12 months"),
+      entireRent: fd.get("entire_rent") === "no" ? "no" : "yes",
+      roommateGender: String(fd.get("roommate_gender") || "any"),
       landlord: landlord,
       lemail: lemail,
       phone: String(fd.get("phone") || "").trim(),

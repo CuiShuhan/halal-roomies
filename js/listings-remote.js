@@ -31,6 +31,8 @@
       start: start,
       furn: row.furn === "no" ? "no" : "yes",
       lease: row.lease || "12 months",
+      entireRent: row.entire_rent === "no" ? "no" : "yes",
+      roommateGender: row.roommate_gender || "any",
       landlord: row.landlord || "",
       lemail: row.lemail || "",
       phone: row.phone || "",
@@ -117,12 +119,18 @@
 
     var listingId = draft.id;
     var imageDataUrls = Array.isArray(options.images) ? options.images : [];
-    var avatarSeed = draft.landlord || (draft.lemail || "").split("@")[0] || listingId;
 
-    return uploadImages(client, listingId, imageDataUrls)
-      .then(function (publicUrls) {
+    return HalalAuth.getSession().then(function (session) {
+      if (!session || !session.user) {
+        throw new Error("Please log in to post a listing.");
+      }
+      var userId = session.user.id;
+      var avatarSeed = HalalAuth.avatarSeedFromUser(session.user);
+
+      return uploadImages(client, listingId, imageDataUrls).then(function (publicUrls) {
         var row = {
           id: listingId,
+          user_id: userId,
           title: draft.title,
           location: draft.location,
           type: draft.type,
@@ -132,6 +140,8 @@
           start_date: draft.start || null,
           furn: draft.furn,
           lease: draft.lease,
+          entire_rent: draft.entireRent,
+          roommate_gender: draft.roommateGender,
           landlord: draft.landlord,
           lemail: draft.lemail,
           phone: draft.phone,
@@ -139,7 +149,8 @@
           landlord_avatar_seed: avatarSeed,
         };
         return client.from("listings").insert(row).select().single();
-      })
+      });
+    })
       .then(function (result) {
         if (result.error) throw result.error;
         return rowToListing(result.data);

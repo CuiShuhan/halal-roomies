@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>List your property — Halal Roomies</title>
+    <title>List your property — Roomdrop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +18,7 @@
         <div class="site-header__inner">
           <a class="logo" href="index.html">
             <img class="logo__mark" src="images/guide-mascot.png" width="34" height="34" alt="" />
-            Halal Roomies
+            Roomdrop
           </a>
           <nav class="nav-main" aria-label="Primary">
             <a href="index.html">Home</a>
@@ -46,11 +46,6 @@
     </div>
 
     <div class="form-shell form-shell--wide">
-      <p
-        id="supabase-status"
-        role="status"
-        style="display: none; margin: 0 0 0.75rem; padding: 0.75rem 1rem; border-radius: var(--radius, 12px); font-size: 0.9rem"
-      ></p>
       <p
         id="listing-script-error"
         class="listing-script-error"
@@ -132,6 +127,23 @@
           Monthly rent ($)
           <input type="number" name="rent" min="0" step="50" placeholder="1550" />
         </label>
+        <div class="form-grid form-grid--2" style="margin-top: 1rem">
+          <div>
+            <p style="margin: 0 0 0.5rem; font-weight: 700; font-size: 0.8rem; color: var(--text-muted)">Entire place rental?</p>
+            <div class="segmented" role="radiogroup" aria-label="Entire rental">
+              <label><input type="radio" name="entire_rent" value="yes" checked /><span>Yes</span></label>
+              <label><input type="radio" name="entire_rent" value="no" /><span>No (shared)</span></label>
+            </div>
+          </div>
+          <label class="field">
+            Roommate preference
+            <select name="roommate_gender" id="roommate-gender-select">
+              <option value="any">Any</option>
+              <option value="male">Male roommate</option>
+              <option value="female">Female roommate</option>
+            </select>
+          </label>
+        </div>
 
         <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0" />
 
@@ -185,8 +197,8 @@
           <a href="#">Terms of Service</a>
         </nav>
         <div class="footer-bottom">
-          <div>https://halalroomies.com/</div>
-          <div>questions@halalroomies.com · +1 (123) 456-7890</div>
+          <div>https://www.getroomdrop.com</div>
+          <div>questions@getroomdrop.com · +1 (123) 456-7890</div>
           <div class="social" aria-label="Social">
             <a href="#" aria-label="Instagram">◎</a>
             <a href="#" aria-label="Facebook">f</a>
@@ -196,40 +208,15 @@
       </div>
     </footer>
 
-    <script>
-      window.HALAL_SUPABASE_CONFIG = {
-        url: "https://joecgybyakaylyprlzpi.supabase.co",
-        anonKey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvZWNneWJ5YWtheWx5cHJsenBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwMjkwNDAsImV4cCI6MjA5NjYwNTA0MH0.Iv1ty8s4FVV5TeOxOAkan5aNG9-B-NNC6inrrPuB9es",
-      };
-      window.HalalSupabase = {
-        BUCKET: "listing-photos",
-        isConfigured: function () {
-          var c = window.HALAL_SUPABASE_CONFIG;
-          return !!(c && c.url && c.anonKey);
-        },
-        isReady: function () {
-          return !!this.getClient();
-        },
-        getClient: function () {
-          if (!window.supabase || typeof window.supabase.createClient !== "function") return null;
-          if (!window._halalSupabaseClient) {
-            var c = window.HALAL_SUPABASE_CONFIG;
-            window._halalSupabaseClient = window.supabase.createClient(c.url, c.anonKey);
-          }
-          return window._halalSupabaseClient;
-        },
-      };
-    </script>
-    <script src="js/vendor/supabase.min.js?v=7"></script>
-    <script src="js/listings-store.js?v=7"></script>
-    <script src="js/listings-remote.js?v=7"></script>
-    <script src="js/supabase-status.js?v=7"></script>
-    <script>
-      if (window.HalalSupabaseStatus) HalalSupabaseStatus.refresh();
-    </script>
+    <script src="js/vendor/supabase.min.js?v=8"></script>
+    <script src="js/supabase-init.js?v=8"></script>
+    <script src="js/auth.js?v=9"></script>
+    <script src="js/header-auth.js?v=9"></script>
+    <script src="js/listings-store.js?v=8"></script>
+    <script src="js/listings-remote.js?v=8"></script>
     <script>
       (function () {
+        function startForm() {
         var form = document.getElementById("listing-form");
         var warn = document.getElementById("listing-script-error");
         var fileInput = document.getElementById("property-photos-input");
@@ -328,6 +315,15 @@
               var msg = (err && err.message) || "Could not save listing.";
               alert(msg + " Check your connection and Supabase setup, or try fewer photos.");
             });
+        });
+        }
+
+        if (!window.HalalAuth) {
+          window.location.replace("login.html?next=" + encodeURIComponent("list-property.html"));
+          return;
+        }
+        HalalAuth.requireAuth().then(function (session) {
+          if (session) startForm();
         });
       })();
     </script>
