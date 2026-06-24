@@ -13,7 +13,13 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="hero-page">
+    <div class="hero-page auth-page-shell">
+      <div
+        class="auth-page__bg"
+        style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80')"
+        aria-hidden="true"
+      ></div>
+      <div class="auth-page__overlay" aria-hidden="true"></div>
       <header class="site-header site-header--transparent">
         <div class="site-header__inner">
           <a class="logo" href="index.html">
@@ -32,21 +38,14 @@
         </div>
       </header>
 
-      <section class="page-hero page-hero--auth hero">
-        <div
-          class="hero__bg"
-          style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80')"
-        ></div>
-        <div class="hero__overlay" aria-hidden="true"></div>
-      </section>
-    </div>
-
-    <div class="auth-split">
+      <div class="auth-split">
       <div class="auth-split__intro">
         <p class="hero__kicker">Welcome to Roomdrop</p>
-        <h1 class="page-title">Create your account</h1>
+        <h1 class="page-title">
+          Save money <span class="accent" style="font-family: var(--font-accent); font-style: italic; font-weight: 500">when you move.</span>
+        </h1>
         <p class="page-lead" style="font-size: 1.05rem">
-          Join a community focused on respectful, values-aligned housing—whether you are listing a room or searching for one.
+          Find sublets, roommates, and referral bonuses in one place. Sign up free to post your listing or referral.
         </p>
         <a class="btn btn--primary btn--lg" href="index.html" style="margin-top: 1rem">Sign up &amp; log in to post</a>
       </div>
@@ -83,6 +82,7 @@
           </p>
         </div>
       </div>
+    </div>
     </div>
 
     <footer class="site-footer">
