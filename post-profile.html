@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Post your profile — Roomdrop</title>
+    <title>Post a referral — Roomdrop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +23,7 @@
           <nav class="nav-main" aria-label="Primary">
             <a href="index.html">Home</a>
             <a href="apartments.html">Apartments</a>
-            <a href="roommate-matching.html" aria-current="page">Roommates</a>
+            <a href="roommate-matching.html" aria-current="page">Referral</a>
           </nav>
           <div class="header-actions">
             <a class="btn btn--outline" href="signup.html">Sign Up</a>
@@ -39,76 +39,60 @@
         ></div>
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__inner" style="padding-top: 5rem; padding-bottom: 3rem">
-          <h1 id="pp-title" class="page-title">Post your own profile</h1>
-          <p class="page-lead">Tell us your basic information so others can find you.</p>
+          <h1 id="pp-title" class="page-title">Post a referral</h1>
+          <p class="page-lead">Share apartment referral details so others can reach you.</p>
         </div>
       </section>
     </div>
 
     <div class="form-shell form-shell--wide">
-      <form class="form-card" action="match-results.html" method="get">
-        <h2 class="form-section-title">Basic information</h2>
-        <div class="form-grid" style="grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start">
-          <div class="upload-circle" role="button" tabindex="0">Upload<br />photo</div>
-          <div class="form-grid">
-            <label class="field">
-              Full name
-              <input type="text" name="name" autocomplete="name" required />
-            </label>
-            <label class="field">
-              Email address
-              <input type="email" name="email" autocomplete="email" required />
-            </label>
-            <label class="field">
-              Location
-              <input type="text" name="location" placeholder="City, state" autocomplete="address-level2" />
-            </label>
-          </div>
+      <p
+        id="referral-script-error"
+        class="listing-script-error"
+        role="alert"
+        style="display: none; margin: 0 0 1rem; padding: 0.75rem 1rem; border-radius: var(--radius, 12px); background: #fff3cd; color: #664d03; font-size: 0.9rem"
+      >
+        Referrals script failed to load. Hard-refresh the page (Cmd+Shift+R).
+      </p>
+      <form id="referral-form" class="form-card" action="roommate-matching.html" method="get">
+        <h2 class="form-section-title">Your contact</h2>
+        <div class="form-grid">
+          <label class="field">
+            Name
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label class="field">
+            Phone number
+            <input type="text" name="phone" placeholder="Not available" autocomplete="tel" />
+            <span class="field__hint">You can enter <strong>Not available</strong> if you prefer not to share.</span>
+          </label>
+          <label class="field">
+            Email
+            <input type="text" name="email" placeholder="Not available" autocomplete="email" />
+            <span class="field__hint">You can enter <strong>Not available</strong> if you prefer not to share.</span>
+          </label>
+          <label class="field">
+            Note
+            <textarea name="note" rows="3" placeholder="How others can find you — e.g. Facebook name"></textarea>
+            <span class="field__hint">Optional. Add how people should contact or identify you.</span>
+          </label>
         </div>
 
         <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0" />
 
-        <div class="grid-2">
-          <div>
-            <h2 class="form-section-title">Budget &amp; availability</h2>
-            <div class="form-grid form-grid--2">
-              <label class="field">
-                Min ($)
-                <input type="number" name="min" value="1550" />
-              </label>
-              <label class="field">
-                Max ($)
-                <input type="number" name="max" value="2000" />
-              </label>
-            </div>
-            <label class="field" style="margin-top: 1rem">
-              Start date
-              <input type="date" name="start" />
-            </label>
-            <label class="field" style="margin-top: 1rem">
-              Lease term
-              <select name="lease_term">
-                <option>6 months</option>
-                <option selected>12 months</option>
-                <option>Month-to-month</option>
-              </select>
-            </label>
-          </div>
-          <div>
-            <h2 class="form-section-title">Lifestyle tags</h2>
-            <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: var(--text-muted)">Tap what describes you best</p>
-            <div class="check-grid">
-              <label class="check-pill"><input type="checkbox" name="tag" value="org" checked /><span>Organized</span></label>
-              <label class="check-pill"><input type="checkbox" name="tag" value="clean" checked /><span>Clean</span></label>
-              <label class="check-pill"><input type="checkbox" name="tag" value="quiet" /><span>Quiet</span></label>
-              <label class="check-pill"><input type="checkbox" name="tag" value="night" /><span>Night owl</span></label>
-              <label class="check-pill"><input type="checkbox" name="tag" value="ns" /><span>Non-smoker</span></label>
-              <label class="check-pill"><input type="checkbox" name="tag" value="care" /><span>Careful</span></label>
-            </div>
-          </div>
+        <h2 class="form-section-title">Apartment</h2>
+        <div class="form-grid form-grid--2">
+          <label class="field">
+            Apartment name
+            <input type="text" name="apartment_name" required />
+          </label>
+          <label class="field">
+            Apartment location
+            <input type="text" name="apartment_location" placeholder="City, neighborhood, or address" required />
+          </label>
         </div>
 
-        <button type="submit" class="btn btn--primary btn--block btn--lg" style="margin-top: 2rem">Post profile</button>
+        <button type="submit" class="btn btn--primary btn--block btn--lg" style="margin-top: 2rem">Post referral</button>
       </form>
     </div>
 
@@ -122,7 +106,6 @@
         </nav>
         <div class="footer-bottom">
           <div>https://www.getroomdrop.com</div>
-          <div>questions@getroomdrop.com · +1 (123) 456-7890</div>
           <div class="social" aria-label="Social">
             <a href="#" aria-label="Instagram">◎</a>
             <a href="#" aria-label="Facebook">f</a>
@@ -135,13 +118,57 @@
     <script src="js/supabase-init.js?v=8"></script>
     <script src="js/auth.js?v=9"></script>
     <script src="js/header-auth.js?v=9"></script>
+    <script src="js/referrals-store.js?v=1"></script>
+    <script src="js/referrals-remote.js?v=1"></script>
     <script>
       (function () {
+        function startForm() {
+          var form = document.getElementById("referral-form");
+          var warn = document.getElementById("referral-script-error");
+          if (!form) return;
+
+          if (!window.HalalRoomiesReferrals) {
+            if (warn) warn.style.display = "block";
+            return;
+          }
+
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (!HalalRoomiesReferrals.saveReferralAsync) return;
+            var fd = new FormData(form);
+            var name = (fd.get("name") || "").toString().trim();
+            var apartmentName = (fd.get("apartment_name") || "").toString().trim();
+            if (!name || !apartmentName) return;
+
+            var submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.textContent = "Posting…";
+            }
+
+            HalalRoomiesReferrals.saveReferralAsync(fd)
+              .then(function () {
+                window.location.href = "roommate-matching.html";
+              })
+              .catch(function (err) {
+                console.error(err);
+                if (submitBtn) {
+                  submitBtn.disabled = false;
+                  submitBtn.textContent = "Post referral";
+                }
+                var msg = (err && err.message) || "Could not save referral.";
+                alert(msg + " Check your connection and try again.");
+              });
+          });
+        }
+
         if (!window.HalalAuth) {
           window.location.replace("login.html?next=" + encodeURIComponent("post-profile.html"));
           return;
         }
-        HalalAuth.requireAuth();
+        HalalAuth.requireAuth().then(function (session) {
+          if (session) startForm();
+        });
       })();
     </script>
   </body>

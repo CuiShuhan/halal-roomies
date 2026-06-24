@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Roomdrop — Find apartments &amp; roommates</title>
+    <title>Roomdrop — Save money when you move</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +23,7 @@
           <nav class="nav-main" aria-label="Primary">
             <a href="index.html" aria-current="page">Home</a>
             <a href="apartments.html">Apartments</a>
-            <a href="roommate-matching.html">Roommates</a>
+            <a href="roommate-matching.html">Referral</a>
           </nav>
           <div class="header-actions">
             <a class="btn btn--outline" href="signup.html">Sign Up</a>
@@ -38,14 +38,14 @@
           style="background-image: url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1920&q=85')"
         ></div>
         <div class="hero__overlay" aria-hidden="true"></div>
-        <div class="hero__inner hero__inner--split">
-          <div class="hero__content">
+        <div class="hero__inner">
+          <div class="hero__content hero__content--landing">
             <p class="hero__kicker">Welcome to Roomdrop</p>
             <h1 id="hero-title" class="hero__title">
-              Find apartments &amp; roommates with <span class="accent">Similar Values</span>
+              Save money <span class="accent">when you move.</span>
             </h1>
             <p class="hero__lead">
-              Browse listings and meet like-minded people in a safe community that shares your values.
+              Find sublets, roommates, and referral bonuses in one place.
             </p>
             <div class="hero-cta-row">
               <a class="btn btn--primary btn--lg" href="signup.html">Sign up</a>
@@ -56,31 +56,6 @@
               <span>✓ No Scams</span>
               <span>✓ Verified Listings</span>
             </div>
-          </div>
-          <div class="hero-svg-wrap" aria-hidden="true">
-            <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" role="img">
-              <title>Illustration</title>
-              <defs>
-                <linearGradient id="blob" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#fce4ec" />
-                  <stop offset="100%" stop-color="#e3f2fd" />
-                </linearGradient>
-              </defs>
-              <ellipse cx="200" cy="150" rx="170" ry="120" fill="url(#blob)" opacity="0.95" />
-              <rect x="120" y="175" width="160" height="12" rx="6" fill="#f8bbd0" />
-              <rect x="145" y="130" width="110" height="70" rx="8" fill="#fff" stroke="#f48fb1" stroke-width="2" />
-              <rect x="158" y="145" width="84" height="48" rx="4" fill="#e8eaf6" />
-              <circle cx="155" cy="105" r="28" fill="#ffe0b2" />
-              <path fill="#5d4037" d="M138 88c8-18 32-22 42-8 4 6 6 14 4 22l-6 18h-28l-6-18c-4-8-6-18-12-14z" />
-              <ellipse cx="155" cy="95" rx="22" ry="20" fill="#c5b4a0" />
-              <rect x="248" y="118" width="56" height="70" rx="10" fill="#fce4ec" stroke="#f48fb1" stroke-width="2" />
-              <circle cx="276" cy="98" r="26" fill="#ffe0b2" />
-              <ellipse cx="276" cy="88" rx="24" ry="22" fill="#37474f" />
-              <path fill="#37474f" d="M252 78c10-4 22-2 30 6 6 8 8 18 6 28h-52c-2-10 0-22 16-34z" />
-              <ellipse cx="200" cy="248" rx="140" ry="14" fill="rgba(244,143,177,0.25)" />
-              <circle cx="95" cy="195" r="10" fill="#fff" stroke="#f48fb1" stroke-width="2" />
-              <path d="M91 192h8v6h-8z" fill="#f48fb1" />
-            </svg>
           </div>
         </div>
       </section>
@@ -169,13 +144,13 @@
     <section class="section" aria-labelledby="rm-heading">
       <div class="section__head">
         <div>
-          <p class="section__eyebrow">People</p>
-          <h2 id="rm-heading" class="section__title">Available roommates</h2>
+          <p class="section__eyebrow">Referrals</p>
+          <h2 id="rm-heading" class="section__title">Available referrals</h2>
         </div>
         <a class="link-more" href="roommate-matching.html">View all →</a>
       </div>
-      <div class="grid-4">
-        <article class="card roommate-card">
+      <div id="home-referrals-grid" class="grid-4">
+        <article class="card roommate-card referral-card">
           <img
             class="avatar"
             src="https://api.dicebear.com/9.x/adventurer/svg?seed=Lisa"
@@ -183,135 +158,57 @@
           />
           <h3 class="card__title">Lisa</h3>
           <p class="card__meta">Arlington, VA</p>
-          <p class="card__price">$1,550–2,000 / mo</p>
+          <p class="card__price card__price--note">Note: Facebook — Lisa M.</p>
           <div class="card__tags" style="justify-content: center">
-            <span class="tag tag--neutral">Quiet</span>
-            <span class="tag tag--neutral">Clean</span>
-            <span class="tag tag--neutral">Careful</span>
+            <span class="tag tag--neutral">Phone: (703) 555-0142</span>
           </div>
-          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">View profile</a>
-          <p class="card__meta" style="margin-top: 0.5rem">Jan 1 – Feb 1</p>
+          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">Georgetown Row House</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: Not available</p>
         </article>
-        <article class="card roommate-card">
+        <article class="card roommate-card referral-card">
           <img
             class="avatar"
             src="https://api.dicebear.com/9.x/adventurer/svg?seed=JamesR"
             alt=""
           />
           <h3 class="card__title">James R.</h3>
-          <p class="card__meta">Boston, MA</p>
-          <p class="card__price">$1,100–1,400 / mo</p>
+          <p class="card__meta">Washington, D.C.</p>
+          <p class="card__price card__price--note">Note: LinkedIn — James Rivera</p>
           <div class="card__tags" style="justify-content: center">
-            <span class="tag tag--neutral">Non-smoker</span>
-            <span class="tag tag--neutral">Organized</span>
+            <span class="tag tag--neutral">Phone: Not available</span>
           </div>
-          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">View profile</a>
-          <p class="card__meta" style="margin-top: 0.5rem">Feb 1 – Aug 1</p>
+          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">Harbor View Loft</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: james.r@getroomdrop.com</p>
         </article>
-        <article class="card roommate-card">
+        <article class="card roommate-card referral-card">
           <img
             class="avatar"
             src="https://api.dicebear.com/9.x/adventurer/svg?seed=SophieL"
             alt=""
           />
           <h3 class="card__title">Sophie L.</h3>
-          <p class="card__meta">Chicago, IL</p>
-          <p class="card__price">$900–1,200 / mo</p>
+          <p class="card__meta">Rockville, MD</p>
+          <p class="card__price card__price--note">Note: IG @sophie.rooms</p>
           <div class="card__tags" style="justify-content: center">
-            <span class="tag tag--neutral">Early riser</span>
-            <span class="tag tag--neutral">Non-smoker</span>
+            <span class="tag tag--neutral">Phone: (301) 555-0198</span>
           </div>
-          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">View profile</a>
-          <p class="card__meta" style="margin-top: 0.5rem">Mar 1 – Jun 1</p>
+          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">Arlington Garden Unit</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: sophie.l@getroomdrop.com</p>
         </article>
-        <article class="card roommate-card">
+        <article class="card roommate-card referral-card">
           <img
             class="avatar"
             src="https://api.dicebear.com/9.x/adventurer/svg?seed=MarcusT"
             alt=""
           />
           <h3 class="card__title">Marcus T.</h3>
-          <p class="card__meta">Dallas, TX</p>
-          <p class="card__price">$800–1,000 / mo</p>
+          <p class="card__meta">Silver Spring, MD</p>
+          <p class="card__price card__price--note">Note: WeChat — marcus_t</p>
           <div class="card__tags" style="justify-content: center">
-            <span class="tag tag--neutral">Quiet</span>
-            <span class="tag tag--neutral">Flexible</span>
+            <span class="tag tag--neutral">Phone: (240) 555-0133</span>
           </div>
-          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">View profile</a>
-          <p class="card__meta" style="margin-top: 0.5rem">Apr 1 – Dec 1</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section--tint" aria-labelledby="res-heading">
-      <div class="section__head">
-        <div>
-          <p class="section__eyebrow">Tips &amp; guides</p>
-          <h2 id="res-heading" class="section__title">Helpful resources</h2>
-        </div>
-        <a class="link-more" href="#">View all →</a>
-      </div>
-      <p class="section__intro section__intro--tight">Insurance, local eats, neighborhood guides—short reads, big photos.</p>
-      <div class="grid-4 resource-grid">
-        <article class="card resource-card">
-          <img
-            class="card__media"
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=640&q=80"
-            alt=""
-            width="640"
-            height="480"
-            loading="lazy"
-          />
-          <div class="card__body">
-            <h3 class="card__title">Renters insurance</h3>
-            <p class="card__meta">Cover your stuff. Compare plans without the sales pitch.</p>
-            <a class="link-more" href="#">Shop plans →</a>
-          </div>
-        </article>
-        <article class="card resource-card">
-          <img
-            class="card__media"
-            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=640&q=80"
-            alt=""
-            width="640"
-            height="480"
-            loading="lazy"
-          />
-          <div class="card__body">
-            <h3 class="card__title">Travel insurance</h3>
-            <p class="card__meta">Flying home or weekend trips—pick what fits students.</p>
-            <a class="link-more" href="#">See options →</a>
-          </div>
-        </article>
-        <article class="card resource-card">
-          <img
-            class="card__media"
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=640&q=80"
-            alt=""
-            width="640"
-            height="480"
-            loading="lazy"
-          />
-          <div class="card__body">
-            <h3 class="card__title">Local restaurants</h3>
-            <p class="card__meta">DMV picks: quick lunch to worth-the-drive dinner.</p>
-            <a class="link-more" href="#">Open list →</a>
-          </div>
-        </article>
-        <article class="card resource-card">
-          <img
-            class="card__media"
-            src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=800&q=80"
-            alt="City street at dusk"
-            width="800"
-            height="533"
-            loading="lazy"
-          />
-          <div class="card__body">
-            <h3 class="card__title">Neighborhood guide</h3>
-            <p class="card__meta">Transit, groceries, and spots worth knowing near campus.</p>
-            <a class="link-more" href="#">Explore →</a>
-          </div>
+          <a class="btn btn--outline" href="roommate-matching.html" style="margin-top: 0.75rem">Metro North Studios</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: Not available</p>
         </article>
       </div>
     </section>
@@ -388,7 +285,6 @@
         </nav>
         <div class="footer-bottom">
           <div>https://www.getroomdrop.com</div>
-          <div>questions@getroomdrop.com · +1 (123) 456-7890</div>
           <div class="social" aria-label="Social">
             <a href="#" aria-label="Instagram">◎</a>
             <a href="#" aria-label="Facebook">f</a>
@@ -402,6 +298,38 @@
     <script src="js/supabase-init.js?v=8"></script>
     <script src="js/auth.js?v=9"></script>
     <script src="js/header-auth.js?v=9"></script>
+    <script src="js/referrals-store.js?v=1"></script>
+    <script src="js/referrals-remote.js?v=1"></script>
+    <script>
+      (function () {
+        var grid = document.getElementById("home-referrals-grid");
+        var MAX_HOME_REFERRALS = 4;
+        if (!grid || !window.HalalRoomiesReferrals || !HalalRoomiesReferrals.readAllAsync) return;
+
+        function trimToMax() {
+          while (grid.querySelectorAll(".referral-card").length > MAX_HOME_REFERRALS) {
+            grid.removeChild(grid.lastElementChild);
+          }
+        }
+
+        HalalRoomiesReferrals.readAllAsync()
+          .then(function (referrals) {
+            var userHtml = referrals
+              .slice(0, MAX_HOME_REFERRALS)
+              .map(function (R) {
+                return HalalRoomiesReferrals.cardMarkup(R);
+              })
+              .join("");
+            if (userHtml) {
+              grid.insertAdjacentHTML("afterbegin", userHtml);
+            }
+            trimToMax();
+          })
+          .catch(function (err) {
+            console.error(err);
+          });
+      })();
+    </script>
     <script>
       (function () {
         var WAITLIST_DISPLAY_NUMBER = "500";

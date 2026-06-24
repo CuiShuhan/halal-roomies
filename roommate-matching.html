@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Find roommates — Roomdrop</title>
+    <title>Referrals — Roomdrop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +23,7 @@
           <nav class="nav-main" aria-label="Primary">
             <a href="index.html">Home</a>
             <a href="apartments.html">Apartments</a>
-            <a href="roommate-matching.html" aria-current="page">Roommates</a>
+            <a href="roommate-matching.html" aria-current="page">Referral</a>
           </nav>
           <div class="header-actions">
             <a class="btn btn--outline" href="signup.html">Sign Up</a>
@@ -39,175 +39,135 @@
         ></div>
         <div class="match-hero__overlay" aria-hidden="true"></div>
         <div class="hero__inner match-hero__content" style="text-align: center; max-width: 40rem">
-          <p class="section__eyebrow" style="margin-bottom: 0.5rem">Browse</p>
-          <h1 id="match-title" class="page-title">Find your next roommate</h1>
+          <p class="section__eyebrow" style="margin-bottom: 0.5rem">Referrals</p>
+          <h1 id="match-title" class="page-title">Apartment referral bonuses</h1>
           <p class="match-hero__lead">
-            Everyone who posted a profile appears here. Post yours so others can find you too.
+            Browse referrals posted by members. Post yours to help others save when they move.
           </p>
           <div class="hero-cta-row" style="margin-top: 1rem">
-            <a class="btn btn--primary btn--lg" href="#roommate-browse">Browse profiles</a>
-            <a class="btn btn--outline btn--lg" href="post-profile.html">Post my profile</a>
+            <a class="btn btn--primary btn--lg" href="#referral-browse">Browse referrals</a>
+            <a class="btn btn--outline btn--lg" href="post-profile.html">Post a referral</a>
           </div>
         </div>
       </section>
     </div>
 
-    <section id="roommate-browse" class="form-shell form-shell--wide match-flow-shell roommate-browse-direct">
+    <section id="referral-browse" class="section" aria-labelledby="referral-heading">
       <div class="section__head section__head--bar" style="margin-bottom: 1.25rem">
         <div>
-          <p class="section__eyebrow">Roommates</p>
-          <h2 class="section__title">Coming soon</h2>
+          <p class="section__eyebrow">Referrals</p>
+          <h2 id="referral-heading" class="section__title">Available referrals</h2>
           <p class="section__lead" style="margin: 0.35rem 0 0; font-size: 0.9rem; color: var(--text-muted)">
-            We're putting the finishing touches on roommate profiles. This feature will be live soon — check back shortly.
+            Only members who posted a referral are listed.
           </p>
         </div>
+        <a class="btn btn--muted" href="post-profile.html">Post a referral</a>
       </div>
 
-      <div class="roommate-browse-direct__grid">
-            <article class="match-mini-card">
-              <div class="match-mini-card__head">
-                <div class="match-mini-card__person">
-                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=EmmaC" alt="" />
-                  <div>
-                    <p class="match-mini-card__name">Emma C.</p>
-                    <p class="card__meta">Grad Student · Boston, MA</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card__tags">
-                <span class="tag tag--neutral">Organized</span>
-                <span class="tag tag--neutral">Early riser</span>
-                <span class="tag tag--neutral">Shared kitchen</span>
-              </div>
-              <p class="card__meta roommate-card__email">emma.c@getroomdrop.com</p>
-            </article>
+      <div id="referrals-grid" class="grid-4">
+        <article class="card roommate-card referral-card">
+          <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=Lisa" alt="" />
+          <h3 class="card__title">Lisa</h3>
+          <p class="card__meta">Arlington, VA</p>
+          <p class="card__price card__price--note">Note: Facebook — Lisa M.</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Phone: (703) 555-0142</span>
+          </div>
+          <a class="btn btn--outline" href="#" style="margin-top: 0.75rem">Georgetown Row House</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: Not available</p>
+        </article>
 
-            <article class="match-mini-card">
-              <div class="match-mini-card__head">
-                <div class="match-mini-card__person">
-                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=JamesR" alt="" />
-                  <div>
-                    <p class="match-mini-card__name">James R.</p>
-                    <p class="card__meta">Software Engineer · NYC</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card__tags">
-                <span class="tag tag--neutral">Quiet hours</span>
-                <span class="tag tag--neutral">Night owl</span>
-                <span class="tag tag--neutral">WFH friendly</span>
-              </div>
-              <p class="card__meta roommate-card__email">james.r@getroomdrop.com</p>
-            </article>
+        <article class="card roommate-card referral-card">
+          <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=JamesR" alt="" />
+          <h3 class="card__title">James R.</h3>
+          <p class="card__meta">Washington, D.C.</p>
+          <p class="card__price card__price--note">Note: LinkedIn — James Rivera</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Phone: Not available</span>
+          </div>
+          <a class="btn btn--outline" href="#" style="margin-top: 0.75rem">Harbor View Loft</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: james.r@getroomdrop.com</p>
+        </article>
 
-            <article class="match-mini-card">
-              <div class="match-mini-card__head">
-                <div class="match-mini-card__person">
-                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=SophieL" alt="" />
-                  <div>
-                    <p class="match-mini-card__name">Sophie L.</p>
-                    <p class="card__meta">Medical Resident · D.C.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card__tags">
-                <span class="tag tag--neutral">Non-smoker</span>
-                <span class="tag tag--neutral">Quiet</span>
-                <span class="tag tag--neutral">Budget minded</span>
-              </div>
-              <p class="card__meta roommate-card__email">sophie.l@getroomdrop.com</p>
-            </article>
+        <article class="card roommate-card referral-card">
+          <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=SophieL" alt="" />
+          <h3 class="card__title">Sophie L.</h3>
+          <p class="card__meta">Rockville, MD</p>
+          <p class="card__price card__price--note">Note: IG @sophie.rooms</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Phone: (301) 555-0198</span>
+          </div>
+          <a class="btn btn--outline" href="#" style="margin-top: 0.75rem">Arlington Garden Unit</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: sophie.l@getroomdrop.com</p>
+        </article>
 
-            <article class="match-mini-card">
-              <div class="match-mini-card__head">
-                <div class="match-mini-card__person">
-                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=MarcusT" alt="" />
-                  <div>
-                    <p class="match-mini-card__name">Marcus T.</p>
-                    <p class="card__meta">Analyst · Arlington, VA</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card__tags">
-                <span class="tag tag--neutral">Quiet</span>
-                <span class="tag tag--neutral">Non-smoker</span>
-                <span class="tag tag--neutral">Flexible lease</span>
-              </div>
-              <p class="card__meta roommate-card__email">marcus.t@getroomdrop.com</p>
-            </article>
+        <article class="card roommate-card referral-card">
+          <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=MarcusT" alt="" />
+          <h3 class="card__title">Marcus T.</h3>
+          <p class="card__meta">Silver Spring, MD</p>
+          <p class="card__price card__price--note">Note: WeChat — marcus_t</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Phone: (240) 555-0133</span>
+          </div>
+          <a class="btn btn--outline" href="#" style="margin-top: 0.75rem">Metro North Studios</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: Not available</p>
+        </article>
 
-            <article class="match-mini-card">
-              <div class="match-mini-card__head">
-                <div class="match-mini-card__person">
-                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=LauraW" alt="" />
-                  <div>
-                    <p class="match-mini-card__name">Laura W.</p>
-                    <p class="card__meta">Designer · Rockville, MD</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card__tags">
-                <span class="tag tag--neutral">Clean</span>
-                <span class="tag tag--neutral">No pets</span>
-                <span class="tag tag--neutral">Early riser</span>
-              </div>
-              <p class="card__meta roommate-card__email">laura.w@getroomdrop.com</p>
-            </article>
+        <article class="card roommate-card referral-card">
+          <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=EmmaC" alt="" />
+          <h3 class="card__title">Emma C.</h3>
+          <p class="card__meta">Boston, MA</p>
+          <p class="card__price card__price--note">Note: Facebook — Emma Chen</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Phone: (617) 555-0177</span>
+          </div>
+          <a class="btn btn--outline" href="#" style="margin-top: 0.75rem">Back Bay Brownstone</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: emma.c@getroomdrop.com</p>
+        </article>
 
-            <article class="match-mini-card">
-              <div class="match-mini-card__head">
-                <div class="match-mini-card__person">
-                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=NinaK" alt="" />
-                  <div>
-                    <p class="match-mini-card__name">Nina K.</p>
-                    <p class="card__meta">Teacher · Baltimore, MD</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card__tags">
-                <span class="tag tag--neutral">Organized</span>
-                <span class="tag tag--neutral">Guests rare</span>
-                <span class="tag tag--neutral">Budget aligned</span>
-              </div>
-              <p class="card__meta roommate-card__email">nina.k@getroomdrop.com</p>
-            </article>
+        <article class="card roommate-card referral-card">
+          <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=NinaK" alt="" />
+          <h3 class="card__title">Nina K.</h3>
+          <p class="card__meta">Baltimore, MD</p>
+          <p class="card__price card__price--note">Note: Message me on Facebook first</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Phone: Not available</span>
+          </div>
+          <a class="btn btn--outline" href="#" style="margin-top: 0.75rem">Harbor View Loft</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: nina.k@getroomdrop.com</p>
+        </article>
 
-            <article class="match-mini-card">
-              <div class="match-mini-card__head">
-                <div class="match-mini-card__person">
-                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=DavidM" alt="" />
-                  <div>
-                    <p class="match-mini-card__name">David M.</p>
-                    <p class="card__meta">Researcher · Silver Spring, MD</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card__tags">
-                <span class="tag tag--neutral">Night owl</span>
-                <span class="tag tag--neutral">Quiet hours</span>
-                <span class="tag tag--neutral">Non-drinker</span>
-              </div>
-              <p class="card__meta roommate-card__email">david.m@getroomdrop.com</p>
-            </article>
+        <article class="card roommate-card referral-card">
+          <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=DavidM" alt="" />
+          <h3 class="card__title">David M.</h3>
+          <p class="card__meta">Alexandria, VA</p>
+          <p class="card__price card__price--note">Note: Facebook — David M.</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Phone: (571) 555-0164</span>
+          </div>
+          <a class="btn btn--outline" href="#" style="margin-top: 0.75rem">Old Town Flats</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: david.m@getroomdrop.com</p>
+        </article>
 
-            <article class="match-mini-card">
-              <div class="match-mini-card__head">
-                <div class="match-mini-card__person">
-                  <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=ChloeA" alt="" />
-                  <div>
-                    <p class="match-mini-card__name">Chloe A.</p>
-                    <p class="card__meta">Nurse · Alexandria, VA</p>
-                  </div>
-                </div>
-              </div>
-              <div class="card__tags">
-                <span class="tag tag--neutral">Flexible</span>
-                <span class="tag tag--neutral">Clean</span>
-                <span class="tag tag--neutral">Pets okay</span>
-              </div>
-              <p class="card__meta roommate-card__email">chloe.a@getroomdrop.com</p>
-            </article>
+        <article class="card roommate-card referral-card">
+          <img class="avatar" src="https://api.dicebear.com/9.x/adventurer/svg?seed=ChloeA" alt="" />
+          <h3 class="card__title">Chloe A.</h3>
+          <p class="card__meta">Chicago, IL</p>
+          <p class="card__price card__price--note">Note: IG @chloe.referrals</p>
+          <div class="card__tags" style="justify-content: center">
+            <span class="tag tag--neutral">Phone: (312) 555-0120</span>
+          </div>
+          <a class="btn btn--outline" href="#" style="margin-top: 0.75rem">Lincoln Park Loft</a>
+          <p class="card__meta" style="margin-top: 0.5rem">Email: Not available</p>
+        </article>
       </div>
+      <p
+        id="referrals-script-error"
+        role="alert"
+        style="display: none; margin: 1rem 0 0; padding: 0.75rem 1rem; border-radius: var(--radius, 12px); background: #fff3cd; color: #664d03; font-size: 0.9rem"
+      >
+        Could not load referrals. Hard-refresh the page (Cmd+Shift+R).
+      </p>
     </section>
 
     <footer class="site-footer">
@@ -220,7 +180,6 @@
         </nav>
         <div class="footer-bottom">
           <div>https://www.getroomdrop.com</div>
-          <div>questions@getroomdrop.com · +1 (123) 456-7890</div>
           <div class="social" aria-label="Social">
             <a href="#" aria-label="Instagram">◎</a>
             <a href="#" aria-label="Facebook">f</a>
@@ -233,5 +192,33 @@
     <script src="js/supabase-init.js?v=8"></script>
     <script src="js/auth.js?v=9"></script>
     <script src="js/header-auth.js?v=9"></script>
+    <script src="js/referrals-store.js?v=1"></script>
+    <script src="js/referrals-remote.js?v=1"></script>
+    <script>
+      (function () {
+        var grid = document.getElementById("referrals-grid");
+        var warn = document.getElementById("referrals-script-error");
+        if (!grid) return;
+        if (!window.HalalRoomiesReferrals || !HalalRoomiesReferrals.readAllAsync) {
+          if (warn) warn.style.display = "block";
+          return;
+        }
+
+        HalalRoomiesReferrals.readAllAsync()
+          .then(function (referrals) {
+            referrals.forEach(function (R) {
+              grid.insertAdjacentHTML("afterbegin", HalalRoomiesReferrals.cardMarkup(R));
+            });
+          })
+          .catch(function (err) {
+            console.error(err);
+            if (warn) {
+              warn.textContent =
+                "Could not load referrals from Supabase. Check js/supabase-config.local.js and your network.";
+              warn.style.display = "block";
+            }
+          });
+      })();
+    </script>
   </body>
 </html>

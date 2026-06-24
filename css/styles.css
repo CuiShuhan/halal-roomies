@@ -249,20 +249,28 @@ a:hover {
 /* ---------- Hero (landing) ---------- */
 .hero-page {
   position: relative;
+  --hero-gutter: 1.25rem;
+}
+
+.hero-page .site-header__inner,
+.hero-page .hero__inner {
+  padding-left: var(--hero-gutter);
+  padding-right: var(--hero-gutter);
 }
 
 .hero {
   position: relative;
-  min-height: min(78vh, 720px);
+  min-height: min(48vh, 420px);
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .hero__bg {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center 55%;
 }
 
 .hero__overlay {
@@ -281,14 +289,76 @@ a:hover {
   z-index: 2;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 5.5rem 1.25rem 3rem;
+  margin-top: 3.75rem;
+  padding: 0 1.25rem 1.75rem;
   width: 100%;
+  box-sizing: border-box;
+}
+
+.hero__content--landing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.hero__content--landing .hero__kicker,
+.hero__content--landing .hero__title,
+.hero__content--landing .hero__lead,
+.hero__content--landing .hero-cta-row,
+.hero__content--landing .trust-row {
+  margin-left: 0;
+  padding-left: 0;
+  align-self: flex-start;
+}
+
+.hero__content--landing .hero__title {
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.hero__content--landing .hero__lead {
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+  max-width: none;
+  white-space: nowrap;
+}
+
+.hero__content--landing .hero-cta-row {
+  margin-bottom: 1.25rem;
+}
+
+.hero__content--landing .trust-row {
+  font-size: 0.95rem;
+  gap: 0.75rem 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: min(44vh, 380px);
+  }
+
+  .hero__inner {
+    margin-top: 3.5rem;
+  }
+
+  .hero__content--landing {
+    max-width: none;
+  }
+
+  .hero__content--landing .hero__lead {
+    white-space: normal;
+  }
 }
 
 .hero__inner--split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1.25rem;
   align-items: center;
 }
 
@@ -296,6 +366,12 @@ a:hover {
   text-align: center;
   max-width: 36rem;
   margin: 0 auto;
+}
+
+.hero__content.hero__content--landing {
+  margin: 0;
+  text-align: left;
+  max-width: min(34rem, 52%);
 }
 
 .hero__inner--split .hero__content {
@@ -311,8 +387,8 @@ a:hover {
 }
 
 .hero__title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
   font-weight: 800;
   color: #6d1f3a;
   letter-spacing: -0.02em;
@@ -326,9 +402,9 @@ a:hover {
 }
 
 .hero__lead {
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.9rem;
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 0.98rem;
 }
 
 .hero-cta-bar {
@@ -354,7 +430,7 @@ a:hover {
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.85rem;
 }
 
 .hero__inner--split .hero-cta-row {
@@ -364,9 +440,9 @@ a:hover {
 .trust-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
+  gap: 0.5rem 1rem;
   justify-content: center;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #8e2152;
 }
@@ -380,9 +456,29 @@ a:hover {
   border: none;
 }
 
+.hero-page .hero__content--landing .hero-cta-row,
+.hero-page .hero__content--landing .trust-row {
+  justify-content: flex-start;
+  align-self: flex-start;
+  width: auto;
+  max-width: 100%;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.hero-page .hero__content--landing .trust-row {
+  align-items: flex-start;
+}
+
 .hero-svg-wrap {
   justify-self: end;
-  max-width: 380px;
+  max-width: 260px;
+}
+
+.hero-svg-wrap svg {
+  display: block;
+  width: 100%;
+  max-height: 180px;
 }
 
 @media (max-width: 900px) {
@@ -642,6 +738,12 @@ a:hover {
   font-weight: 800;
   color: var(--accent-dark);
   margin: 0.5rem 0;
+}
+
+.roommate-card .card__price--note {
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .card__tags {
@@ -1039,12 +1141,12 @@ a:hover {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
 }
 
 .detail-map-frame {
-  flex: 1 1 0;
-  min-height: 88px;
+  flex: 1 1 auto;
+  min-height: 180px;
+  height: 100%;
   border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -1191,9 +1293,17 @@ label.field,
 }
 
 .field input:focus,
-.field select:focus {
+.field select:focus,
+.field textarea:focus {
   outline: 2px solid var(--bg-pink);
   border-color: var(--accent);
+}
+
+.field__hint {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 .switch {

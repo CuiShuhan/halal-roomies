@@ -22,7 +22,7 @@
         <nav class="nav-main" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="apartments.html" aria-current="page">Apartments</a>
-          <a href="roommate-matching.html">Roommates</a>
+          <a href="roommate-matching.html">Referral</a>
         </nav>
         <div class="header-actions">
           <a class="btn btn--outline" href="signup.html">Sign Up</a>
@@ -160,28 +160,19 @@
             </aside>
           </div>
 
-          <aside class="card detail-side-card detail-map-card" aria-labelledby="map-risk-title">
+          <aside class="card detail-side-card detail-map-card" aria-labelledby="map-location-title">
             <div class="detail-column-head">
-              <h3 id="map-risk-title" class="detail-side-card__title">Area safety heat map</h3>
-              <p class="detail-side-card__meta">Illustrative map for neighborhood context (not official crime data).</p>
+              <h3 id="map-location-title" class="detail-side-card__title">Location</h3>
+              <p class="detail-side-card__meta">Approximate spot based on the listing address.</p>
             </div>
             <div class="detail-map-stack">
               <div class="detail-map-frame">
                 <iframe
-                  id="detail-map-a"
+                  id="detail-map"
                   title="Street map near listing"
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
                   src="https://www.google.com/maps?q=Umag%20Croatia&output=embed&hl=en&gl=us"
-                ></iframe>
-              </div>
-              <div class="detail-map-frame">
-                <iframe
-                  id="detail-map-b"
-                  title="Area overview map"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps?q=Monaco%20Croatia&output=embed&hl=en&gl=us"
                 ></iframe>
               </div>
             </div>
@@ -200,7 +191,6 @@
         </nav>
         <div class="footer-bottom">
           <div>https://www.getroomdrop.com</div>
-          <div>questions@getroomdrop.com · +1 (123) 456-7890</div>
           <div class="social" aria-label="Social">
             <a href="#" aria-label="Instagram">◎</a>
             <a href="#" aria-label="Facebook">f</a>
@@ -327,12 +317,12 @@
         phoneLine.textContent = L.phone ? "📞 " + L.phone : "Phone not provided";
 
         var q = (L.location || L.title || "").trim();
-        if (q && document.getElementById("detail-map-a")) {
-          var encoded = encodeURIComponent(q);
-          document.getElementById("detail-map-a").src =
-            "https://www.google.com/maps?q=" + encoded + "&output=embed&hl=en&gl=us";
-          document.getElementById("detail-map-b").src =
-            "https://www.google.com/maps?q=" + encoded + "&output=embed&hl=en&gl=us";
+        if (q) {
+          var mapEl = document.getElementById("detail-map");
+          if (mapEl) {
+            mapEl.src =
+              "https://www.google.com/maps?q=" + encodeURIComponent(q) + "&output=embed&hl=en&gl=us";
+          }
         }
         }
 
