@@ -1872,6 +1872,10 @@ label.field,
   min-height: 240px;
 }
 
+.page-hero--auth {
+  min-height: min(38vh, 360px);
+}
+
 .page-hero .hero__overlay {
   background: linear-gradient(180deg, rgba(252, 228, 236, 0.5) 0%, rgba(255, 248, 252, 1) 100%);
 }

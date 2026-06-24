@@ -131,8 +131,8 @@
               </div>
               <div class="card detail-feature-card" style="padding: 1rem; text-align: center" role="listitem">
                 <div style="font-size: 1.5rem" aria-hidden="true">👤</div>
-                <p style="margin: 0.35rem 0 0; font-weight: 700">Roommate</p>
-                <p id="detail-val-roommate-gender" style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">Any</p>
+                <p style="margin: 0.35rem 0 0; font-weight: 700">Seeking</p>
+                <p id="detail-val-roommate-gender" style="margin: 0; font-size: 0.85rem; color: var(--text-muted)">Anyone</p>
               </div>
             </div>
             <aside class="card detail-landlord-card" aria-labelledby="landlord-card-title">
@@ -295,8 +295,8 @@
         var genderEl = document.getElementById("detail-val-roommate-gender");
         if (genderEl) {
           if (L.entireRent === "no") {
-            var genderLabels = { male: "Male", female: "Female", any: "Any" };
-            genderEl.textContent = genderLabels[L.roommateGender] || "Any";
+            var genderLabels = { male: "Male", female: "Female", any: "Anyone" };
+            genderEl.textContent = genderLabels[L.roommateGender] || "Anyone";
           } else {
             genderEl.textContent = "N/A";
           }
